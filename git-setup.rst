@@ -7,3 +7,25 @@
 5. **Clone the Github repo** to your dev computer:
 
   *git clone https://github.com/[YOUR GITHUB NAME]/web150-w16*
+
+
+**Commiting changes to Github **
+
+Git has a great variety of options, but the most basic steps for committing your changes to Github are: 
+
+1. Add your changes to the local repo:
+    git add .
+
+2. Commit your changes to the local repo:
+    git commit -m "COMMIT MESSAGE"
+
+3. Push your local changes to the remote repo:
+    git push origin master
+
+(by default, remote repo is called 'origin' and local repo is 'master')
+
+Other Useful Git commands:
+
+* Show details of the remote repo:
+    git remote -v
+    

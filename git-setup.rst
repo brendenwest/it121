@@ -13,7 +13,7 @@
 
 Git has a great variety of options, but the most basic steps for committing your changes to Github are: 
 
-1. Add your changes to the local repo:
+1. Add all your changes to the local repo:
     git add .
 
 2. Commit your changes to the local repo:
@@ -28,4 +28,3 @@ Other Useful Git commands:
 
 * Show details of the remote repo:
     git remote -v
-    

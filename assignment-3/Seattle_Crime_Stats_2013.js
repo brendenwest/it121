@@ -1,4 +1,4 @@
-var  crime_stats = [[1,"E","Robbery",3],
+var crime_stats = [[1,"E","Robbery",3],
 [1,"E","Larceny-Theft",30],
 [1,"E","Motor Vehicle Theft",11],
 [1,"E","Burglary",18],
@@ -2994,5 +2994,5 @@ var  crime_stats = [[1,"E","Robbery",3],
 [12,"SW","Assault",2],
 [12,"SW","Larceny-Theft",31],
 [12,"SW","Motor Vehicle Theft",11],
-[12,"SW","Burglary",18],
+[12,"SW","Burglary",18]
 ];

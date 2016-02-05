@@ -5,7 +5,7 @@
 <h1>Events & validation</h1>
 
 <form id="form1" action="#" onsubmit="return validateForm(this);">
-  name: <input type="text" name="name"><br>
+  name: <input type="text" name="firstname"><br>
   password: <input type="text" name="password"><br>
 
   <button >Check</button>
@@ -16,8 +16,16 @@
 <script>
 
 function validateForm(myForm) {
-  var answer = document.getElementById("message");
-  answer.innerHTML = myForm.name.value;
+
+  // validation code goes here
+  var firstname = myForm.firstname.value; // get text value of firstname field
+  
+  var message = document.getElementById("message");
+
+  // write appropriate message to the web page, depending on whether entries are valid
+
+  message.innerHTML = "Proceed citizen!"
+
   return false; // prevent page reload
 }
 

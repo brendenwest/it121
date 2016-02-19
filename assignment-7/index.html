@@ -3,25 +3,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     </head>
     <style>
-        button {
-            background-color: yellow;
-        }
-        
         .over {
             background-color: orange;
         }
+        
         .selected {
             background-color: green;
         }
         
-        .odd_row {
-            background-color: #cccccc;
-        }
-        
     </style>
     <body>
-        <div id="houses"></div>
         <div id="roles"></div>
+        <table border='1'><tr><th>Name</th><th>Role</th><th>House</th><th>Gender</th><th>Aligns</td><tr></table>
+
+    </body>
         
         <script>
         var characters = [
@@ -44,63 +39,47 @@
         
 
         // buttons
-        var houses = [];
         var roles = [];
         for (row in characters) {
-            var house = characters[row].house;
-            if (house && houses.indexOf(house) == -1) {
-                houses.push(house);
-            }            
             var role = characters[row].role;
             if (role && roles.indexOf(role) == -1) {
                 roles.push(role);
             } 
         }
-        for (row in houses) {
-            $("#houses").append("<button>" +houses[row]+ "</button>");
-        }
         for (row in roles) {
             $("#roles").append("<button>" +roles[row]+ "</button>");
         }
         
-        document.write("<table border='1'><tr><th>Name</th><th>Role</th><th>House</th><th>Gender</th><th>Aligns</td><tr>");
         for (row in characters) {
-            document.write("<tr><td>" +characters[row].name+ "</td><td>" +characters[row].role+ "</td><td>" +characters[row].house+ "</td><td>" +characters[row].gender+ "</td><td>" +characters[row].alignment+ "</td></tr>");
+            $("table").append("<tr><td>" +characters[row].name+ "</td><td>" +characters[row].role+ "</td><td>" +characters[row].house+ "</td><td>" +characters[row].gender+ "</td><td>" +characters[row].alignment+ "</td></tr>");
         }
-        document.write("</table>");
 
         $(document).ready(function(){
-        var buttons = $('button');
-        var selectedBtn;
+            var buttons = $('button');
+
+            buttons.on('mouseenter', function(e) {
+                var $this = $(this);
+                $this.addClass("over");
+            });
         
-        $("tr:odd").addClass("odd_row");
+            buttons.on('mouseleave', function() {
+                var $this = $(this);
+                $this.removeClass("over");
+            });
         
-        buttons.on('mouseenter', function(e) {
-            var $this = $(this);
-            $this.addClass("over");
-        });
-        
-        buttons.on('mouseleave', function() {
-            var $this = $(this);
-            $this.removeClass("over");
-        });
-        
-        buttons.on('click', function() {
-            var $this = $(this);
-            toggleRows($this.text());
+            buttons.on('click', function() {
+                $(".selected").removeClass("selected");
+                var $this = $(this);
+                $this.addClass("selected");
+                toggleRows($this.text());
             });
 
         });
 
         function toggleRows(text) {
             var rows = $("tr").filter(":not(:contains('" + text + "'))" );
-            console.log(rows[0].hidden);
-            if (!rows[0].hidden) { rows.hide(500) }
-            else { rows.show(500); }
+            // your code here
         }
 
         </script>
-        
-        <div id="message"></div>
-    </body>
 </html>

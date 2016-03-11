@@ -3,27 +3,42 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     </head>
 <body>
-    
-    <form>
+    <h2>Job Application</h2><hr>
+    <form id="myForm" onsubmit="return validateForm(this);">
 <table>        
-        <tr><td>Name:</td><td> <input type="text" name="name"></td></tr>
-        <tr><td>age:</td><td> <input type="text" name="age"></td></tr>
-        <tr><td>phone:</td><td> <input type="text" name="phone"></td></tr>
-        <tr><td>zip:</td><td> <input type="text" name="zip"></td></tr>
-        <tr><td>password:</td><td> <input type="text" name="password"></td></tr>
-    </form>
+        <tr><td>Name:</td><td> <input type="text" name="fullname"></td></tr>
+        <tr><td>Birthdate:</td><td> <input type="?" name="birthdate"></td></tr>
+        <tr><td>Phone:</td><td> <input type="text" name="phone"></td></tr>
+        <tr><td>Zip code:</td><td> <input type="text" name="zip"></td></tr>
+        <tr><td>Profile:</td><td> <textarea rows="4" cols="30" name="profile"></textarea> </td></tr>
 </table>
-<button>Check</button>
+<input type="submit" value="Register">
+    </form>
+
+<hr><div id="message"></div>
 
 <script>
-$('form button, form input[type=submit]').on('click', function(e) {
-  //cancel the normal form submission behavior
-  e.preventDefault();
 
-  //gather up the form's values
-  var form = $('form');
+function validateForm(myForm) {
+
+/*
+    1 - Apply validation requirements on each field, as described below.
+    2 - Show a placeholder value for fields that require a specific format
+    3 - Show an appropriate message for invalid entries
+    4 - On successful validation, display the number of times an entered profile mentions javascript, jquery or js
+    
+    Requirements:
+    
+    - applicants age must be >= 18
+    - phone number should be in format: (nnn) nnn-nnnn
+    - zip can be in these formats: nnnnn or nnnnn-nnnn
+*/
+
+    
+    // cancel the normal form submission behavior
+    return false;
   
-});
+}
     
 </script>
 

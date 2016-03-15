@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+<body>
+  <script>document.write(new Date());</script>
+  <hr>
+<form id="testform">
+  name: <input type="text" name="firstname">
+  <button>submit</button>
+</form>
+
+<script>
+//when you click the submit button...
+
+$('form button, form input[type=submit]').on('click', function(e) {
+  //cancel the normal form submission behavior
+  e.preventDefault();
+
+  //gather up the form's values
+  var form = $('form');
+  var formData = form.serialize();
+  console.log(formData);
+  //send the request
+  $.post("https://web150-w16-brendenw.c9users.io/form",formData, 
+  function(result, status) {
+    if (!result) {
+      alert("Student not found");
+    }
+      $("button").disabled = false;
+    }  
+  );
+
+  // disable button to prevent double-submit
+  $("button").disabled = true;
+
+});
+
+</script>
+</body>
+<html>

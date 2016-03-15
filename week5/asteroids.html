@@ -1,0 +1,77 @@
+<html>
+    <style>
+        .asteroid {
+            position:absolute;
+            display:block;
+            background-color:cyan;
+            text-align:center;
+            width:20;
+            height:20;
+        }
+        
+        #box {
+            position:relative;
+            display:block;
+            width:200;
+            height:200;
+            background-color:#cccccc;
+             border-style: solid;
+            border-width: 1px;
+        }
+    </style>
+    <body>
+        <div id="box"></div>
+
+        <script>
+            var velocity = 500; // refresh interval in milliseconds
+
+            // define a list of asteroid objects            
+            var asteroids = [
+                {x:20, y:20, label:"X"},
+                {x:50, y:50, label:"Y"}
+            ];
+            
+            var box = document.getElementById("box");
+            
+            // add each asteroid to the container box
+            for (a in asteroids) {
+                box.innerHTML += "<div class='asteroid' id='" + a + "' style='left:" +asteroids[a].x+ "px;top:" +asteroids[a].y+ "px;'>" +asteroids[a].label+ "</div>";
+            }
+
+            function shuffle() {
+                for (a in asteroids) {
+                    move(a);
+                }
+            }
+
+            // move a specific asteroid
+            function move(n) {
+                var asteroid = document.getElementById(n);
+                
+                // if the asteroid doesn't already have these properties 
+                // set a random value for how far it can move in the x and y directions
+                if (!asteroid.dx) { asteroid.dx = getRandom(3,10); }
+                if (!asteroid.dy) { asteroid.dy = getRandom(3,10); }
+                
+                // find current x & y positions. If the asteroid is near the container sides, 
+                // reverse it's direction of movement
+                var currentLeft = parseInt(asteroid.style.left); 
+                if (currentLeft >= 190 || currentLeft <= 10) { asteroid.dx *= -1; }
+                asteroid.style.left = (currentLeft + asteroid.dx) + "px";
+
+                var currentTop = parseInt(asteroid.style.top); 
+                if (currentTop >= 190 || currentTop <= 10) { asteroid.dy *= -1; }
+                asteroid.style.top = (currentTop + asteroid.dy) + "px";
+            }
+            
+            function getRandom(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            
+            var myInterval = setInterval(shuffle, velocity);
+
+        </script>
+        
+    </body>
+    
+</html>

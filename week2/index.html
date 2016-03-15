@@ -1,0 +1,34 @@
+<html>
+    
+<script>
+    var age = 23;
+    var y = 5;
+
+    if (age < 18) { // minor
+        document.write("minor = " + age); 
+        
+    } else { // ok to vote
+        if (age >= 65) { // eligible for SS
+            // x less than 5
+        } else {
+         document.write("y = " + y); 
+        }
+        
+    }
+    
+    var category = (age < 18) ? "minor" : "adult"; 
+    
+    switch (category) {
+        case "minor":
+            // do stuff for minors
+            break;
+        case "senior":
+            // handling for older person
+            break;
+        default:
+            // anything else
+    }
+    
+
+</script>
+</html>

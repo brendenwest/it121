@@ -5,7 +5,7 @@ JavaScript is the primary programming language for web development. This class c
 
 Required Materials
 ++++
-There is no printed textbook for this course. We will use JavaScript for the Web Savvy (Links to an external site.), which was written specifically for this program, as our primary text. Additional readings will be made available on the resources page, or posted to the class's GitHub repo. Students should also acquire the following free resources:
+There is no printed textbook for this course. We will use <a href="https://thomaswilburn.github.io/textbook/">JavaScript for the Web Savvy</a>, which was written specifically for this program, as our primary text. Additional readings will be made available on the resources page, or posted to the class's GitHub repo. Students should also acquire the following free resources:
 
 A GitHub account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
 The Git client software, installed on the computer where you'll do your homework.

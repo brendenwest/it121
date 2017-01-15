@@ -190,3 +190,14 @@ Code can also be included into a web page from an external source file:
 
 
 Note - External script files do not contain <script></script> tags.
+
+
+**User Input**
+
+prompt - presents message and text-entry box. Text entry returned to script as string variable.
+
+    var name = prompt(“What is your name?”);
+
+Confirm - presents message along with ‘OK’ and ‘Cancel’ buttons . Returns ‘true’ if user selects OK and ‘false’ if user selects Cancel.
+
+    var proceed = confirm("Do you want to proceed?");

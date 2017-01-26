@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Functions & validation</h1>
+
+<form id="form1" action="#" onsubmit="return validateForm(this);">
+  first name: <input type="text" name="firstname"><br>
+  last name: <input type="text" name="lastname"><br>
+  password: <input type="text" name="password"><br>
+
+  <button >Check</button>
+</form>
+
+<hr><div id="message"></div>
+
+<script>
+
+function validateForm(myForm) {
+
+  var firstname = myForm.firstname.value; // get text of firstname field
+
+  // use this syntax to update 'message' DIV with appropriate wording
+  $("#message").html("message"); 
+
+  /* Form validation code goes here
+  */
+  
+  return false; // prevent page reload
+}
+
+</script>
+
+</body>
+</html> 

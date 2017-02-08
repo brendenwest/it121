@@ -3,33 +3,20 @@
 
    <title>Deal Cards</title>
 
-      <script type="text/javascript">
 
-  deck.click(function (card) {
-         dealCard(randomGame(), this);
-});
 
-   function randomGame() { Math.floor(Math.random() * 52);
-    }
+    <script>
+          var values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+          var suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
 
-         function card(value, name, suit){
-            this.value = value;
-            this.name  = name;
-            this.suit  = suit;
-         }
-
-         function deck(){
-            this.value = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-            this.suit = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
-            var myDeck = [this.value + this.suit];
+      function dealCard() {
+            var value =  Math.floor(Math.random() * 13);
+            var suit =  Math.floor(Math.random() * 4);
+        for (i = 0; i < 5; i++) {
+          document.getElementById("deal").innerHTML =  values[value] + " of  " +  suits[suit];
 
          }
-      var card=5;
-      function dealCard(i, button) {
-         if (myDeck ==0) return false; //i wasn't sure if how to write the function to deal
-
-
-      }
+       }
 
 
               </script>
@@ -38,7 +25,9 @@
      <body>
     <h1>Are you ready to play?</h1>
        <div class="wrapper">
-       <input type= "button" value="Let's Play" id="deal"/>
+         <p id ="deal"></p>
 
+       <button onClick= "dealCard()">Click to play</button>
+        </div>
    </body>
 </html>

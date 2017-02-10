@@ -12,7 +12,7 @@
     </style>
 
     <body>
-        <div id="roles"></div>
+        <div id="buttons"></div>
         <table border='1'><tr><th>Name</th><th>Role</th><th>House</th><th>Gender</th><th>Aligns</td><tr></table>
     </body>
         
@@ -32,15 +32,14 @@
         {name:"Luna Lovegood", role:"student", house:"Ravenclaw",gender:"f",alignment:"good"},    
         {name:"Voldemort", role:"", house:"Slytherin",gender:"m",alignment:"evil"},    
         {name:"Bellatrix Lestrange", role:"", house:"Slytherin",gender:"f",alignment:"evil"},           
-        {name:"Severus Snape", role:"staff", house:"Slytherin",gender:"m",alignment:"?"},    
-        {name:"Dobby", role:"", house:"",gender:"?",alignment:"good"}
+        {name:"Severus Snape", role:"staff", house:"Slytherin",gender:"m",alignment:"?"}
         ];
 
-        // add rows to table
+        $(document).ready(function(){
+
+        // add table row for each character
         // generate button for each unique house
         // add button to reset table rows
-
-        $(document).ready(function(){
             
         // add functionality to hide/show rows when button clicked
 

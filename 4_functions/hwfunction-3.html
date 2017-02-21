@@ -34,6 +34,10 @@ function validateForm(myForm) {
      $("#message").html("password should less than 8 characters");
       return false;  
     }
+      else if password (/[a-zA-Z]/) == -1){
+        $("#message").html("password should have lowercase and uppercase letters");
+    return false; 
+    }
     else
   $("#message").html("thanks"); 
   /* Form validation code goes here

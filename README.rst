@@ -2,7 +2,7 @@ Class Details
 ++++
 * Location: BE 3156
 * Time: T,TH 7:15 - 9:20 pm
-* Dates: 01/03/2017 - 03/22/2017
+* Dates: 01/02/2018 - 03/21/2018
 * Instructor: Brenden West | brenden.west@seattlecolleges.edu | 206-552-9795
 * Credits: 5
 
@@ -18,12 +18,12 @@ We will use <a href="https://thomaswilburn.github.io/textbook/">JavaScript for t
 
 Students will also need the following free resources:
 
-* A _github.com: https://github.com/ account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
+* A https://github.com/ account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
 * The git client software, installed on the computer where you'll do your homework.
 * A modern, syntax-highlighting code editor. such as Brackets, Komodo Edit, Atom, or Sublime Text.
 * A modern web browser with developer/debugging tools (e.g. Chrome, Firefox, IE9+, Edge) 
 
-**Note** - Students can use a free online service such as Cloud9 (https://c9.io/) to develop JavaScript programs on any computer
+**Note** - Students can use a free online service such as https://c9.io/ to develop JavaScript programs on any computer
 
 Class Structure and Topics
 ++++

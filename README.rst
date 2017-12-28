@@ -8,22 +8,22 @@ Class Details
 
 Summary
 ++++
-JavaScript is the primary programming language of web development. This class covers the core features of JavaScript and how to effectively use JavaScript in the browser. We'll write our own scripts, ranging from simple menus to complex graphics and animations. We'll also learn how to retrieve results from a server without a full-page refresh (AJAX), and use templating systems to place that information into the web page.
+This class covers the core features of JavaScript, the primary programming language of web development. Students will write their own scripts to exercise increasingly complex concepts including forms validation, API request with AJAX, & animations. 
 
-Throughout the course we will use common tools and techniques of professional web developers, such as source control, browser debuggers, and dependency management. All assignments will be turned in and evaluated using GitHub.
+Throughout the course we will use common tools and techniques of professional web developers, such as source control, browser debuggers, and dependency management. All assignments will be turned in via GitHub.com, a source-control system used widely in professional software development.
 
 Required Materials
 ++++
 We will use <a href="https://thomaswilburn.github.io/textbook/">JavaScript for the Web Savvy</a>, which was written specifically for this program, as our primary text, as well as several excellent online reference & tutorial sites.
 
-Students should also acquire the following free resources:
+Students will also need the following free resources:
 
-* A GitHub account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
-* The Git client software, installed on the computer where you'll do your homework.
+* A _github.com: https://github.com/ account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
+* The git client software, installed on the computer where you'll do your homework.
 * A modern, syntax-highlighting code editor. such as Brackets, Komodo Edit, Atom, or Sublime Text.
 * A modern web browser with developer/debugging tools (e.g. Chrome, Firefox, IE9+, Edge) 
 
-Note - Students can use a free online service such as Cloud9 (https://c9.io/) to access web development tools from any computer.
+**Note** - Students can use a free online service such as Cloud9 (https://c9.io/) to develop JavaScript programs on any computer
 
 Class Structure and Topics
 ++++
@@ -57,13 +57,12 @@ Reference
 - JavaScript and JQuery - by Jon Duckett
 - JavaScript: The Good Parts - by Douglass Crockford
 
-Note - The Seattle Public Library offers card holders free access to many technical reference books at:
+**Note** - The Seattle Public Library offers card holders free access to many technical reference books at:
 
 https://ezproxy.spl.org/login?url=http://proquestcombo.safaribooksonline.com/?uicode=spl 
 
 JavaScript Tools
 ++++
-- http://www.jslint.com/ 
 - https://jsfiddle.net/ 
 - http://jshint.com/ 
 - http://jsonlint.com/ 

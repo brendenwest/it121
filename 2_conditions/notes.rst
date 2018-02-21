@@ -17,51 +17,65 @@ Conditional Logic
 
 **Comparisons & Conditions**
 
-Comparison expressions evaluate to ‘true’ or ‘false’ using mathematical and logical operators.
+Comparison expressions evaluate to ‘true’ or ‘false’ using mathematical and logical operators:
+::
 
-Equality Operators:  <, >, <=, >=, ==, !=, ===
+    <, >, <=, >=, ==, !=, ===
+
+Comparisons take the basic form:
+
+    (<EXPRESSION> <OPERATOR> <OPERATOR)
+
+For example:
+::
 
     var x = 3;
     var y = 4;
     
     (x == 3) // true
-    
-    (x == “3”) // also true. JS can auto-convert strings to numbers
-    
-    (x === “3”) // false because 3 & “3” are different data types
-
+    (x == "3") // also true. JS can auto-convert strings to numbers
+    (x === "3") // false because 3 & "3" are different data types
     (x != y) // true
-
     (x <= y) // true
+    (x >= y) // false
 
 
 **Logical operators**
 
-&& and
+&& means and
 
-|| or
+|| means or
 
-! not
+!  negates the expression following it
+::
 
     (x < y) && (x > 0) // true because both expressions are true
-
     (x < y) || (x > 6) // true because at least one expression is true
-
     !(x == 3) // false because (x == 3) is ‘true
 
 
 **Conditional Statements**
+JavaScript programs can use conditional (if ... else) blocks to decide which code should be executed. A simple conditional block may have just one statement:
+::
 
-If...else statements can have one or more expressions at each branch, and any number of branches. Each branch is exclusive.
-
-    if (<expression>) {
+    if (<EXPRESSION>) {
      // <expression> evaluated to true
+    }
+
+Or the block may have any number of exclusive statements:
+::
+
+    if (<EXPRESSION1>) {
+      // <EXPRESSION1> evaluated to true
+    } else if (EXPRESSION2) {
+      // execute if expression2 evaluates to true
     } else {
-     // <expression> evaluated to false
+      // execute if all expressions evaluate to false
     }
 
 
 if … else statements are exclusive and can include any number of conditions:
+::
 
     var age = 18;
     if (age < 18) {
@@ -73,6 +87,7 @@ if … else statements are exclusive and can include any number of conditions:
     }
 
 if statements can be nested:
+::
 
     var age = 30;
     var isMatinee = true;
@@ -91,38 +106,50 @@ if statements can be nested:
 
 
 **Ternary operator**
+JavaScript has a special shorthand for simple conditional statements, where this block:
+::
 
-- special type of if ... else
+    var ageGroup;
+    if (age > 65) {
+      ageGroup = "senior";
+    } else {
+      ageGroup = "regular";
+    }
+
+Can be written like this:
+::
 
     var ageGroup = (age > 65) ? “senior” : “regular”;
 
 **Switch**
 
-Value of <expression> is compared against each case. If the value and case match, the code in that block is executed. JavaScript will continue comparing unless it hits a ‘break’ command.
+JavaScript also has conditional blocks where the value of an expression is compared against different cases. If the value and case match, the code in that block is executed. JavaScript will continue comparing unless it hits a break command.
+::
 
-    switch (expression) {
+    switch (EXPRESSION) {
     case value1:
-        <code>
+        // code to execute if expression evaluates to value1
         break;
     case value2:
-        <code>
+        // code to execute if expression evaluates to value2
         break;
     default:
-        <code>
+        // code to execute if no other conditions were met
     }
 
 
-- Expression can be a variable or a comparison statement
+- EXPRESSION can be a variable or a comparison statement
 - Each case is a specific value. Value can be any primitive JS data type (number, string, boolean)
 - Cases don’t have to be exclusive. If you don’t include ‘break’, the next statement will be checked.
+::
 
-    var region = “north”;
+    var region = "north";
     switch (region) {
-    case “east”:
-        // do something
+    case "east":
+        // do something for 'east'
         break;
-    case “west”:
-        // do something
+    case "west":
+        // do something for 'west'
         break;
     default:
         // code for any other regions
@@ -130,14 +157,15 @@ Value of <expression> is compared against each case. If the value and case match
 
 
 Multiple cases can share the same code block.
+::
 
     switch (region) {
-    case “east”:
-    case “west”:
-        // do something
+    case "east":
+    case "west":
+        // do something for 'east' & 'west'
         break;
-    case “south”:
-        // do something
+    case "south":
+        // do something for 'south'
         break;
     default:
         // do something
@@ -145,11 +173,12 @@ Multiple cases can share the same code block.
 
 
 Switch can be nested in if..else and vice versa.
+::
 
     switch (timeOfDay) {
-    case “morning”:
+    case "morning":
         // do something
-    case “afternoon”:
+    case "afternoon":
         if (isWeekend) {
             // take a nap
         } else {
@@ -157,7 +186,7 @@ Switch can be nested in if..else and vice versa.
         }
         break;
     
-    case “evening”:
+    case "evening":
         // do something
         break;
     default:

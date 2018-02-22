@@ -12,15 +12,18 @@ Functions
 
 * function definition
 * parameters
-* returning values
+* return values
 * calling functions
+* ES6 (arrow) functions
+* higher-order functions
 
 JavaScript supports functions, which are self-contained blocks of code that perform a specific task. Functions are useful for encapsulating code that will be re-used, and can make programs easier to read and maintain.
 
 JavaScript functions can be defined with the following format:
+::
 
-    function functionName(<parameter>) {
-      <code block>
+    function <NAME>(<PARAMETER>) {
+      // code to execute goes here
     }
 
 - Code within the function executes when the function is ‘called’ or ‘invoked’.
@@ -31,12 +34,14 @@ JavaScript functions can be defined with the following format:
 - Parameters can be any valid JS variable or object, and should use the same naming conventions as other variables,
 
 Functions can perform work:
+::
 
     function writeMessage(message) {
       console.log(message);
     }
 
-Functions can also **return** a value to the code that called the function:
+Functions can also **return** a value to the code that called the function. 
+::
 
     function multiply(param1, param2) {
       var factor = 0.5;
@@ -46,6 +51,7 @@ Functions can also **return** a value to the code that called the function:
     var y = multiply(6,4);  // y = 12
 
 Variables defined within a function have **local scope** within the function and aren't accessible elsewhere:
+::
 
     function multiply(param1, param2) {
       var factor = 0.5;
@@ -60,29 +66,43 @@ Variables defined within a function have **local scope** within the function and
 JavaScript treats functions as first-class objects that can be assigned to a variable and passed to other functions.
 
 A function expression can assign an **anonymous** function to a variable, where the function definition is parsed once.
+::
 
     var multiply = function(x, y) {
        return x * y;
     };
     var x = multiply(3,3);
  
-
 A function expression can also assign a ‘named’ function to a variable. The function name can be referenced independent of the variable. 
+::
 
     var multiply = function func_name(x, y) {
        return x * y;
     };
 
 - behaves same as anonymous, but 'func_name' can appear when function is written out as a string.
- 
 
 More details at - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+
+**ES6 functions**
+
+A recent JavaScript standard - ES2015 or ES6 - introduced slightly different function syntax:
+::
+
+    const multiply = (x, y) => {
+       return x * y;
+    };
+
+Here, the function is defined as a *constant* value, with x & y as parameters. The *fat arrow* indicates the parameters are passed into the code enclosed with curly braces.
+
+Arrow functions are invoked just like classic JS functions, but handle scope a bit differently - in ES functions, **this** refers to the function and not to the global application.
 
 **Higher-order functions**
 
 Higher-order functions are JavaScript functions that take a function as a parameter. 
 
 Array.sort() is a typical HOF that accepts a custom function to sort array contents. (remember default Array sort doesn't work for numeric data).
+::
 
     var grades = [1, 12, 10, 9, 8];
     document.write("<li>grades sorted alpha:" + grades.sort()); // outputs: 1,10,12,8,9
@@ -102,11 +122,11 @@ Array.sort() is a typical HOF that accepts a custom function to sort array conte
         else
             return 1; 
     }
- 
 
 **Templating**
 
 Functions can be useful for separating data from HTML formatting:
+::
 
     var students = [ 
     {name:"jim",id:32}, 

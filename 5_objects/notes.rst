@@ -10,31 +10,37 @@ Objects
 
 **Summary**
 
-* object definition
+* JavaScript object
 * object properties
 * object methods
 * object constructors
+* HTML DOM 
 
 **Notes**
 
-We use use JavaScript ‘objects’ to simulate real-world objects in programs. Objects are like arrays (collections of values), but with named properties instead of sequential indexes.
+Software programs use ‘objects’ to simulate real-world objects and to encapsulate logic, so that programs can use these objects without knowing their internal details.
 
-JavaScript objects can be defined like so using a 'literal' syntax with key-value pairs:
+JavaScript objects are collections of data items, where each item is a key-value pair, and can be defined like so:
+::
 
     var student = { name: "Jim Jones", year: 1, major: "web" }  
 
 - keys must be strings
-- values can be any javascript data type - string, number, array, boolean,
-- name:value pairs are separated by a comma. No comma after the last pair
+- values can be any JavaScript data type - string, number, array, boolean, or another object
+- keys and values are separated by a colon
+- key-value pairs are separated by a comma. There is no comma after the last pair
+- keys are sometimes referred to as object 'properties'
  
-Object keys can be referenced as properties (attributes) that describe the object. You can access object properties in two ways:
+Object items have no sequence (or index number). Instead, values are accessed by key using either approach below:
+::
 
     console.log(student.name);
-    console.log(student[“name”]);
+    console.log(student["name"]);
 
 **Object Iteration**
 
-You can loop through an object’s properties:
+You can still loop through an object’s properties:
+::
 
     for (var prop in student) {
       console.log(prop); // outputs the key name e.g. “name”
@@ -56,29 +62,32 @@ Global browser objects:
 **Object collections**
 
 Arrays can contain a collection of custom objects:
+::
 
     var students = [
-    { name: "Jim Jones", year: 1, major: "web" }
-    { name: "Dave Smith", year: 1, major: "itc" }
-    { name: "Ann Hathaway", year: 2, major: "itc" }
+    { name: "Jim Jones", year: 1, major: "web" },
+    { name: "Dave Smith", year: 1, major: "itc" },
+    { name: "Ann Hathaway", year: 2, major: "itc" },
     { name: "Loren Bacall", year: 2, major: "web" }
     ]; 
     document.write(students[0].name); // outputs ‘Jim Jones’
 
 **Object Methods**
 
-Objects can contain ‘methods’, which are functions bound to the object.
+JavaScript objects can contain ‘methods’, which are functions contained within an object.
+::
 
     var student = {
-      firstName: “Mary”,
+      firstName: "Mary",
       lastName: "Jones",
       fullName: function() {
            return this.firstName + " " + this.lastName;
         }
     };
  
-Functions perform an action and are invoked or ‘called’ like this (NOTE the parens):
+Methods perform an action and are invoked or ‘called’ like this (NOTE the parens):
+::
 
     document.write( student.fullName() );
 
-In the above example, the fullName() method ‘returns’ a string value that combines firstName and lastName. It uses ‘this’ as reference to its containing.object.
+In the above example, the fullName() method ‘returns’ a string value that combines firstName and lastName. It uses **this** to reference its containing.object.

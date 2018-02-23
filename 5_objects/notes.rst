@@ -5,6 +5,7 @@ Objects
 **Reading**
 
 * http://thomaswilburn.github.io/textbook/build/objects.html 
+* https://www.w3schools.com/js/js_objects.asp
 * http://www.w3schools.com/js/js_objects.asp
 * https://www.tutorialspoint.com/javascript/javascript_objects.htm
 

@@ -78,7 +78,7 @@ The jQuery framework is included into the web page as a script source. Then jQue
 jQuery commands begin with a $-sign and take the following form with: 
 ::
 
-    $(<SELECTOR>).<ACTION>(); 
+    $(SELECTOR).ACTION(); 
 
 This applies a specific jQuery action (method) to one or more DOM elements returned by the ‘selector’. Selectors can be combinations of HTML tags, class names, and object ID’s. 
 

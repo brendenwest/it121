@@ -14,7 +14,7 @@
             display:block;
             width:200;
             height:200;
-            background-color:#cccccc;
+            background-color:#efe;
              border-style: solid;
             border-width: 1px;
         }
@@ -23,7 +23,7 @@
         <div id="box"></div>
 
         <script>
-            var velocity = 500; // refresh interval in milliseconds
+            var velocity = 100; // refresh interval in milliseconds
 
             // define a list of asteroid objects            
             var asteroids = [
@@ -34,12 +34,12 @@
             var box = document.getElementById("box");
             
             // add each asteroid to the container box
-            for (a in asteroids) {
+            for (var a in asteroids) {
                 box.innerHTML += "<div class='asteroid' id='" + a + "' style='left:" +asteroids[a].x+ "px;top:" +asteroids[a].y+ "px;'>" +asteroids[a].label+ "</div>";
             }
 
             function shuffle() {
-                for (a in asteroids) {
+                for (var a in asteroids) {
                     move(a);
                 }
             }

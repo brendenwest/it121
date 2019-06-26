@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+<body>
+  <script>document.write(new Date());</script>
+  <hr>
+<form id="testform">
+  City: <input type="text" name="q">
+  <button>submit</button>
+</form>
+<div id="forecast">
+
+
+</div>
+
+<script>
+  function kelvinToF(value) {
+    var fahrenheit = (((Number(value) - 273.15)*9)/5) + 32;
+    return fahrenheit.toFixed(2);
+  }
+
+$('button').on('click', function(e) {
+  //cancel the normal form submission behavior
+  e.preventDefault();
+
+  //gather up the form's values
+  var city = $('input').val();
+
+  //send the request
+  $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q=" +city+ ",us&APPID=d09708f81ff13711278d283901a9ce34", 
+  function(result, status) {
+    if (!result) {
+      alert("fail");
+    }
+//    console.log(result);
+      $("button").disabled = false;
+      $("#forecast").html("");
+
+      for (i=0;i < result.list.length; i+=8) {
+        // console.log(result.list[i].dt_txt)
+        // console.log(result.list[i].main.temp)
+        // console.log(result.list[i].main.humidity)
+        // console.log(result.list[i].main.temp_min)
+        // console.log(result.list[i].main.temp_max)
+        // console.log(result.list[i].weather[0].description)
+        // console.log(result.list[i].weather[0].icon)
+
+        $("#forecast").append(
+          "<li>" + new Date(result.list[i].dt_txt) + 
+          "<li>humidity: " + result.list[i].main.humidity +
+          "<li>hi: " + kelvinToF(result.list[i].main.temp_min) +
+          "<li>lo: " + kelvinToF(result.list[i].main.temp_max) +
+          "<li>Conditions: " + result.list[i].weather[0].description +
+          "<img src='http://openweathermap.org/img/w/" +result.list[i].weather[0].icon+ ".png '><hr>"
+          )
+      }
+    }  
+  );
+
+  // disable button to prevent double-submit
+  $("button").disabled = true;
+
+});
+
+</script>
+</body>
+<html>

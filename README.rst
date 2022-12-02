@@ -1,50 +1,53 @@
 Class Details
 ++++
-* Location: BE 3156
-* Time: T,TH 7:15 - 9:20 pm
-* Dates: 01/02/2018 - 03/21/2018
-* Instructor: Brenden West | brenden.west@seattlecolleges.edu | 206-552-9795
+* Location: Virtual
+* Time: TH 5:00 - 6:30 pm
+* Dates: 01/03/2023 - 03/23/2023
+* Instructor: Brenden West | brenden.west@seattlecolleges.edu
 * Credits: 5
 
 Summary
 ++++
-This class covers the core features of JavaScript, the primary programming language of web development. Students will write their own scripts to exercise increasingly complex concepts including forms validation, API request with AJAX, & animations. 
+This class covers the core features of JavaScript, the primary web development programming language. Students will write increasingly complex programs to exercise key web development concepts including forms validation, API request with AJAX, & animations.
 
-Throughout the course we will use common tools and techniques of professional web developers, such as source control, browser debuggers, and dependency management. All assignments will be turned in via GitHub.com, a source-control system used widely in professional software development.
+Throughout the course we will use common tools and techniques of professional web developers, such as source control, browser debuggers, and dependency management. All assignments will be turned in via github.com, a source-control system used widely in professional software development.
 
 Required Materials
 ++++
-We will use <a href="https://thomaswilburn.github.io/textbook/">JavaScript for the Web Savvy</a>, which was written specifically for this program, as our primary text, as well as several excellent online reference & tutorial sites.
+This course will reference **JavaScript from Beginner to Professional** (Packt Publishing), which  students can access free of charge online through - https://www.oreilly.com/library/view/temporary-access/?orpq
 
 Students will also need the following free resources:
 
-* A https://github.com/ account. Note that with a student e-mail address, you can sign up for an educational account, which includes free private repositories and other benefits.
-* The git client software, installed on the computer where you'll do your homework.
-* A modern, syntax-highlighting code editor. such as Brackets, Komodo Edit, Atom, or Sublime Text.
+* A https://github.com/ account.
+* The git client software, installed on your development computer.
+* A modern, syntax-highlighting code editor.
 * A modern web browser with developer/debugging tools (e.g. Chrome, Firefox, IE9+, Edge) 
 
-**Note** - Students can use a free online service such as https://c9.io/ to develop JavaScript programs on any computer
+**Note** - Students can use a free online service such as https://replit.com/ to develop JavaScript applications on any internet enabled computer.
 
 Class Structure and Topics
 ++++
-Each week, we'll cover a different topic, building on the previous week's work. In general, we will cover new material in Tuesday lectures, and Thursdays will be more about putting what we've learned into practice. We will cover the following topics, although the order and precise list is subject to revision:
+Each week, we'll cover a different topic, building on the previous week's work. In general, I will cover new material on Mondays and review in depth on Thursday, allowing time for questions and in-person demos.
 
-- Variables & data types
-- Conditional statements
-- Loops and arrays
-- Functions
-- Objects 
-- JQuery & DOM manipulation
+The class will cover the following topics, although the order and precise list is subject to revision:
+
+- JavaScript language features:
+    - Variables & expressions
+    - Conditional statements
+    - Loops and arrays
+    - Functions
+    - Objects
+- HTML DOM manipulation with JQuery
 - Forms & data validation
-- jQuery events & effects
-- AJAX and JSON
+- DOM events & effects
+- API integration
 - Drawing
 
 Grading
 ++++
-Grades will be based on weekly assignments (80%), class participation (10%), and an in-class presentation (10%) on an open-source JavaScript project that you find interesting. 
+Grades will be based on weekly assignments (85%) & quizzes (15%).
 
-Weekly assignments will be posted on Canvas each Thursday and are designed to exercise the skills and concepts covered that week. Assignments are due by the start of class on the following Tuesday, and late assignments will be automatically marked down by 20%.
+Weekly assignments will be posted on Canvas each Monday and are designed to exercise the skills and concepts covered that week. Assignments are due by the end of the week, and late assignments will be automatically marked down by 10%.
 
 You may discuss how to approach a problem with other students in the class, but your submission must be your own work. Code submissions that are substantially identical would be considered cheating and subject to a markdown penalty.
 
@@ -53,23 +56,13 @@ Reference
 - http://www.w3schools.com/js  
 - https://www.tutorialspoint.com/javascript/
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript  
-- http://eloquentjavascript.net/ 
-- JavaScript and JQuery - by Jon Duckett
-- JavaScript: The Good Parts - by Douglass Crockford
 
-**Note** - The Seattle Public Library offers card holders free access to many technical reference books at:
-
-https://ezproxy.spl.org/login?url=http://proquestcombo.safaribooksonline.com/?uicode=spl 
-
-JavaScript Tools
-++++
-- https://jsfiddle.net/ 
-- http://jshint.com/ 
-- http://jsonlint.com/ 
+**Note** - Seattle Colleges students have free online access to many technical reference books at: https://www.oreilly.com/library/view/temporary-access/?orpq
 
 Development Tools
 ++++
-- https://c9.io/
-- https://github.com/ 
+- http://jsonlint.com/
+- https://replit.com
+- https://github.com/
 - https://git-scm.com/
 - http://stackoverflow.com/

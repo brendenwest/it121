@@ -21,13 +21,20 @@ JavaScript (JS) is a general-purpose programming language developed around 1995.
 
 Since 2009, with the introduction of **node.js**, JS has also become popular for developing high-performance web services and for automating IT processes.
 
+*Classic* JS has loose syntax rules. Changes introduced in 2015 (known as *ES6*) are stricter and examples in this class will use the newer format.
+
 **Developer Console**
 
 Most modern web browsers (e.g. Safari, Chrome, Edge) have developer tools, including a *console* that allows one to run JavaScript commands directly. Use the console to practice simple JS commands and expressions.
 
+
+**Expressions**
+
+Programs are usually composed of expressions - code that evaluates to a single value. The most basic expression is a single value, but expressions usually involve some combination of basic expressions & operators.
+
 **Variables**
 
-Javascript has several *primitive* data types for storing values. All other variables and objects are composed of these:
+JavaScript has several *primitive* data types for storing values. All other variables and objects are composed of these:
 
 - number
 - character
@@ -36,36 +43,37 @@ Javascript has several *primitive* data types for storing values. All other vari
 Variables are declared and assigned a value in a statement with this basic syntax:
 ::
 
-    var <name> = <value>;
+    let <name> = <value>;  // defines a variable that may change
+    const <name> = <value>;  // defines a constand value that cannot change
 
 for example:
 ::
 
-    var age = 32;
-    var name = "jim";
+    let age = 32;
+    const pi = 3.14;
+    let name = "jim";  // this is a *string* composed of multiple character values
 
-* Variable names cannot match *reserved* words (e.g. JavaScript commands)
+* Variable names cannot match **reserved** words (e.g. JavaScript commands)
 * Variable names must begin with a letter and cannot contain spaces or special characters
+* Unlike many languages, JS does not require you specify the data **type**
 * Full rules at http://www.w3schools.com/js/js_variables.asp
-
-Value assigned to a variable can be literal or the result of an expression:
+* Value assigned to a variable can be literal or the result of an **expression**:
 ::
 
-    var x = 10;
-    var x = 5 + 5;
+    let x = 10;
+    let x = 5 + 5;
 
-After a variable is declared, it can be redefined like so ('var' not needed):
+After a variable is declared, it can be redefined like so:
 ::
 
     x = 15;
 
-**Numbers**
-
-Javascript numbers can be any valid number value:
+**Numbers** - can be any valid numeric value:
 ::
 
-    var x = 1;
-    var y = 1.5;
+    let x = 1;
+    let y = 1.5;
+    let z = -3;
 
 Javascript has global methods that apply to numbers:
 ::
@@ -78,23 +86,22 @@ Javascript has global methods that apply to numbers:
 Javascript also has many number-specific methods:
 ::
 
-    var x = 1.2345
+    let x = 1.2345
     x.toFixed(2) // returns 1.23
 
 * Number methods return a new value. They do not change the original variable
 * See a full list of numeric methods at - http://www.w3schools.com/js/js_number_methods.asp 
 
 
-**Strings**
+**Strings** - encapsulate a sequence of characters
 
-* Strings encapsulate a sequence of characters
 * Strings are delimited by single or double quotes
 * Characters can be letters, numbers, or symbols
 ::
 
-    var name = "john";
-    var name2 = "John"; // values are case sensitive
-    var name3 = "O\"Donnell" // characters matching the delimiter need to be escaped
+    let name = "john";
+    let name2 = "John"; // values are case sensitive
+    let name3 = "O\"Donnell" // characters matching the delimiter need to be escaped
 
 * Note - please use a consistent style for delimiters.
 
@@ -102,13 +109,13 @@ Javascript also has many number-specific methods:
 JavaScript provides a range of string-specific methods, such as: 
 ::
 
-    var address = "1234 First ave, Seattle, WA, 981234";
+    let address = "1234 First ave, Seattle, WA, 981234";
     address.length // length is a property, not a method
     address.toUpperCase() // returns uppercase version of string
     address.toLowerCase() // returns lowercase version of string
     address.replace("Seattle", "Bellevue"); // replaces first instance of 'Seattle'    
 
-JavaScript strings are sequences of characters, so you can access & change portions of the string based on their index (position). The first character in a string has an index of zero.
+JavaScript strings are sequences of characters, so you can access & change portions of the string based on their **index** (position). The first character in a string has an index of zero.
 ::
 
     address.charAt(2); // returns '3' which is the 3nd letter
@@ -117,81 +124,85 @@ JavaScript strings are sequences of characters, so you can access & change porti
     address.search("OR"); // returns -1 if not found
     address.substring(16,23); // returns 'Seattle' (characters 16 thru 22)
 
-Note - This method extracts the characters between "start" and "end", not including "end" itself.
+**Note** - This method extracts the characters between "start" and "end", not including "end" itself.
 
 If "start" is greater than "end", this method will swap the two arguments, meaning str.substring(1,4) == str.substring(4,1)
 ::
  
-    var address2 = address.replace("Seattle", "Bellevue");
+    let address2 = address.replace("Seattle", "Bellevue");
 
 Replace returns a new string. By default, the replace() function replaces only the first match.
 
 Strings can be combined with +
 ::
 
-    var name = "dave" + " Jones";
+    let name = "dave" + " Jones";
 
 See a full list of string methods at -  http://www.w3schools.com/js/js_string_methods.asp
 
-**Boolean**
-
-Bool variables take only true or false values
+**Boolean** variables take only true or false values
 ::
 
-    var isWinter = true;
-    var isSummer = false;
-    var isMinor = (age < 18)
+    let isWinter = true;
+    let isSummer = false;
+    let isMinor = (age < 18)
 
 **null & undefined**
 
-With JavaScript, null is for objects, undefined is for variables, properties, and methods. To be null, an object has to be defined, otherwise it will be undefined.
+JavaScript has several ways to indicate a variable has no value.
 
-undefined
+**undefined** - means the variable hasn't yet been assigned a value
 ::
 
-    var x; // console.log(x) returns ‘undefined’
+    let x; // console.log(x) returns ‘undefined’
 
-null
+**null** - means the variable has been defined but has no value. Important for distinguishing from a value of zero.
 ::
 
-    var person = null;     // Value is null, but type is still an object
+    let person = null;     // Value is null, but type is still an object
  
 
 **Expressions & Operators**
 
-An expression is a combination of values, variables, and operators, which computes to a value.
+An expression is a combination of values, variables, and operators which evaluates to a single value.
 
-Javascript uses arithmetic operators ( + - *  / ) to compute values
+Javascript uses arithmetic operators ( + - *  / %) to compute values
 ::
 
-    var x = 3 + 4 - 2;
-    var y = x/4;
-    var z = 3*y;
+    let x = 3 + 4 - 2;
+    let y = x/4;
+    let z = 3*y;
 
 Modulus (remainder) - %
 ::
 
-    var x = 10;
-    var y = x % 2; // returns 0
-    var z = x % 3; // returns 1
+    let y = 10 % 2; // returns 0
+    let z = 10 % 3; // returns 1
 
-Assignment operations: +=, -=, \*=, /=, %=
+Increment operators: +=, -=, \*=, /=, %=
 ::
 
-    var x = 3;
+    let x = 3;
     x += 5; // same as x = x + 5
+
+**String Contatenation**
+
+Strings can be contatenated (combined) with a plus sign.
+::
+
+  let name = "davey" + " Jones";
 
 **Comments**
 
 JavaScript code can include comments that are not executed. Comments can be on the same line as code:
 ::
 
-    var x = 5;   // some explanation here, not executed
+    let x = 5;   // this here explanation not executed
 
 or on a separate line:
 ::
 
-    // var x = 6;   entire line ignored
+    // let x = 6;   entire line ignored
 
 Comments can span multiple lines:
 ::
@@ -203,7 +214,7 @@ Comments can span multiple lines:
 
 **Scripting**
 
-For the most part, JavaScript code runs in html web pages. Code can be inline:
+For the most part, JavaScript code runs in HTML web pages. Code can be inline between **script** tags:
 ::
 
     <html>
@@ -212,8 +223,8 @@ For the most part, JavaScript code runs in html web pages. Code can be inline:
         <script>
             /* this is a comment
              */
-            var x = 5;
-            var firstname = "ted";
+            let x = 5;
+            let firstname = "ted";
             document.write(y);
         </script>
     </body </html>
@@ -229,7 +240,7 @@ Code can also be included into a web page from an external source file:
     </body </html>
 
 
-Note - External script files do not contain <script></script> tags.
+Note - External script files should not contain <script></script> tags.
 
 
 **User Input**
@@ -237,9 +248,9 @@ Note - External script files do not contain <script></script> tags.
 prompt - presents message and text-entry box. Text entry returned to script as string variable.
 ::
 
-    var name = prompt(“What is your name?”);
+    let name = prompt(“What is your name?”);
 
 Confirm - presents message along with ‘OK’ and ‘Cancel’ buttons . Returns ‘true’ if user selects OK and ‘false’ if user selects Cancel.
 ::
 
-    var proceed = confirm("Do you want to proceed?");
+    let proceed = confirm("Do you want to proceed?");

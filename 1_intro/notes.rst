@@ -1,19 +1,25 @@
 ====
-Variables & Operators
+Intro to JavaScript
 ====
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/gettingStarted.html
+* JavaScript from Beginner to Professional, Ch. 1 - 2
 * http://www.w3schools.com/js/js_syntax.asp (read up thru data types)
 
 **Summary**
 
-* developer console
+* JavaScript Intro
 * variables
 * expressions
 * operators
 * data types
+
+**JavaScript Intro**
+
+JavaScript (JS) is a general-purpose programming language developed around 1995. As an *interpreted* language, JS is relatively easy to for beginning developers and for many years it has been the de facto language of web pages (software that runs in a web browser).
+
+Since 2009, with the introduction of **node.js**, JS has also become popular for developing high-performance web services and for automating IT processes.
 
 **Developer Console**
 
@@ -175,7 +181,7 @@ Assignment operations: +=, -=, \*=, /=, %=
     var x = 3;
     x += 5; // same as x = x + 5
 
-Comments
+**Comments**
 
 JavaScript code can include comments that are not executed. Comments can be on the same line as code:
 ::
@@ -195,9 +201,9 @@ Comments can span multiple lines:
     that spans multiple lines
     */
 
-Scripting
+**Scripting**
 
-For the most part, JavaScript code runs in a web page. Code can be inline:
+For the most part, JavaScript code runs in html web pages. Code can be inline:
 ::
 
     <html>
@@ -234,5 +240,6 @@ prompt - presents message and text-entry box. Text entry returned to script as s
     var name = prompt(“What is your name?”);
 
 Confirm - presents message along with ‘OK’ and ‘Cancel’ buttons . Returns ‘true’ if user selects OK and ‘false’ if user selects Cancel.
+::
 
     var proceed = confirm("Do you want to proceed?");

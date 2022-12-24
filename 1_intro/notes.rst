@@ -6,6 +6,7 @@ Intro to JavaScript
 
 * JavaScript from Beginner to Professional, Ch. 1 - 2
 * http://www.w3schools.com/js/js_syntax.asp (read up thru data types)
+* https://www.w3schools.com/js/js_es6.asp
 
 **Summary**
 

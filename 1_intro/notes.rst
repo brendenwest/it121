@@ -105,6 +105,16 @@ Javascript also has many number-specific methods:
 
 * Note - please use a consistent style for delimiters.
 
+Strings can be contatenated (combined) with a plus sign.
+::
+
+  let name = "davey" + " Jones";
+
+Strings can also be contatenated with a `template literal` using back-ticks and variable names:
+::
+
+let full_name = `${first_name} \` ${last_name}`
+
 
 JavaScript provides a range of string-specific methods, such as: 
 ::
@@ -185,12 +195,6 @@ Increment operators: +=, -=, \*=, /=, %=
     let x = 3;
     x += 5; // same as x = x + 5
 
-**String Contatenation**
-
-Strings can be contatenated (combined) with a plus sign.
-::
-
-  let name = "davey" + " Jones";
 
 **Comments**
 

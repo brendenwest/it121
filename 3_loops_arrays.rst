@@ -4,7 +4,7 @@ Arrays & Loops
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/arrays.html 
+* JavaScript from Beginner to Professional, Ch. 3 & 5
 * http://www.w3schools.com/js/js_arrays.asp  
 * http://www.w3schools.com/js/js_array_methods.asp 
 
@@ -22,20 +22,20 @@ Arrays & Loops
 Arrays store a **list** of values and can be defined using any of the below approaches:
 ::
 
-    var names = []; // creates empty array
-    var names = ["jim", "dave", "sara", "ann"]; 
-    var names = [
+    let names = []; // creates empty array
+    const names = ["jim", "dave", "sara", "ann"];
+    const names = [
     "jim",
     "dave",
     "sara",
     "ann"
     ];
-    var names = "jim,dave,sara,ann".split(",")
+    const names = "jim,dave,sara,ann".split(",")
  
 Arrays can contain items of different data types:
 ::
 
-    var myArray = ["jim", 32, true];
+    const myArray = ["jim", 32, true];
 
 Array items are accessed by ‘index’ where index values start at zero:
 ::
@@ -91,22 +91,23 @@ Searching Arrays:
 Combining/Extracting Arrays
 ::
 
-    var names = ["jim", "dave", "sara", "ann"];
-    var names2 = ["mark","mary"];
+    let names = ["jim", "dave", "sara", "ann"];
+    let names2 = ["mark","mary"];
     names.concat(names2) // adds names2 to names array
 
-    var names3 = names.slice(1); // new array with items from index 1
-    var names3 = names.slice(1,2); // new array with items from start index to end index, excluding end index
+    let names3 = names.slice(1); // new array with items from index 1
+    let names3 = names.slice(1,2); // new array with items from start index to end index, excluding end index
 
-    var namesString = names.toString() // return array items as  comma-delimited string
-    var namesString = names.join("|") // return array items as string delimited by | (or anything specified between quotes.
+    let namesString = names.toString() // return array items as  comma-delimited string
+    let namesString = names.join("|") // return array items as string delimited by | (or anything specified between quotes.
 
 **Nested Arrays**
 ::
 
-    var students = [["jim",20], ["dave",16], ["sara",18], ["ann",15]];
+    let students = [["jim",20], ["dave",16], ["sara",18], ["ann",15]];
     // students[0] returns ["jim",20]
     // students[0][0] returns "jim"
+
 
 **Loops**
 Loops allow you to iterate through a sequence of items and perform the same operations on each.
@@ -114,7 +115,7 @@ Loops allow you to iterate through a sequence of items and perform the same oper
 for, in - loop through each item in an array object. Counter generated automatically.
 ::
 
-    for (var n in names) {
+    for (let n in names) {
         document.write(names[n] + "<br>");
     }
 
@@ -133,8 +134,8 @@ counted loops
 - <expression3> is executed after each run of the code block.
 ::
 
-    var names = ["jim", "dave", "sara", "ann"];
-    for (var i = 0; i < names.length; i++) {
+    let names = ["jim", "dave", "sara", "ann"];
+    for (let i = 0; i < names.length; i++) {
         document.write(names[i] + "<br>");
     }
 
@@ -146,12 +147,12 @@ Variants:
 ::
 
     // loop through array in reverse order
-    for (var i = names.length-1; i >= 0; i--) {
+    for (let i = names.length-1; i >= 0; i--) {
         document.write(names[i] + "<br>");
     }
 
     // loop through array skipping odd items
-    for (var i = 0; i < names.length; i+=2) {
+    for (let i = 0; i < names.length; i+=2) {
         document.write(names[i] + "<br>");
     }
 
@@ -162,7 +163,7 @@ Variants:
         // code to be executed
     }
 
-    var i = 0;
+    let i = 0;
     while(names[i]) {
         console.log(names[i])
         i++;
@@ -173,12 +174,12 @@ Variants:
 Loops can contain any valid javascript code. For example:
 ::
 
-    var ages = [25, 35, 30, 40];
-    var sum = 0;
-    var maxAge = 0;
-    var minAge = 100;
+    let ages = [25, 35, 30, 40];
+    let sum = 0;
+    let maxAge = 0;
+    let minAge = 100;
     
-    for (var i in grades) {
+    for (let i in grades) {
         sum += ages[i];
         if (ages[i] > maxAge) {
          maxAge = ages[i];
@@ -196,27 +197,10 @@ Loops can contain any valid javascript code. For example:
 Use ‘break’ to end loop before final condition is reached:
 ::
 
-    for (var i in names) {
+    for (let i in names) {
         if names[i] == "dave" {
             document.write("Found Dave!<br>");
             break;
          }
     }
 
-**Exercises**
-
-Use this string for the following exercises:
-
-    var students = "jim-m, sue-f, mary-f, ann-f, ted-m, frank-m, lisa-f";
-
-- convert the string to an array,
-- print the number of array items
-- print the first array item
-- print the last array item
-- print each name (without gender)
-- print each name with first letter capitalized
-- print every other name
-- print the total count of male & female students
-- remove the last student from the array
-- remove the first student from the array
-- make a new array with a subset of students, using .slice()

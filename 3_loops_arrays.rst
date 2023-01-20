@@ -125,13 +125,15 @@ for, in - loop through each item in an array object. Counter generated automatic
 counted loops
 ::
 
-    for (<expression1>; <expression2>; <expression3>) {
+    for (INITIALIZATION; TEST; UPDATE) {
         // code to execute
     }
 
-- <expression1> is executed once before the loop starts. You can set multiple values in this expression.
-- <expression2> defines the condition for running the loop (or when it should stop).
-- <expression3> is executed after each run of the code block.
+- INITIALIZATION is executed once before the loop starts. You can set multiple values in this expression.
+- TEST defines the condition for running the loop (or when it should stop).
+- UPDATE is executed after each run of the code block.
+
+For example:
 ::
 
     let names = ["jim", "dave", "sara", "ann"];
@@ -139,9 +141,9 @@ counted loops
         document.write(names[i] + "<br>");
     }
 
-- i is a counter variable scoped to the loop
+- i is a counter variable set to 0 when the loop starts
 - i is incremented with each pass of the loop
-- loop runs until i equals array length
+- loop runs until i equals the length of `names` array
 
 Variants:
 ::
@@ -204,3 +206,43 @@ Use ‘break’ to end loop before final condition is reached:
          }
     }
 
+**Higher-order Array Methods**
+
+JavaScript arrays have a number of built-in methods that take a `function` as a parameter. Often this parameter is an `anonymous` inline function. These higher-order methods are similar to loops, but more concise and readable.
+
+**filter** - Create an array containing only items that meet the function condition
+::
+
+    const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+    // pass each array item to an inline function.
+    // Return only items that meet the function condition
+    const result = words.filter(word => word.length > 6);
+
+    console.log(result);
+    // Expected output: Array ["exuberant", "destruction", "present"]
+
+**map** - create an array with one item for each item in the source array
+::
+
+    const array1 = [1, 4, 9, 16];
+
+    const array2 = array1.map(x => x * 2);
+
+    console.log(array2);
+    // Expected output: Array [2, 8, 18, 32]
+
+**reduce** - executes a function on each element of the array, in order. Uses the return value from the calculation as input for the next element. The array `reduce()`` function results in a single value.
+::
+
+    const array1 = [1, 2, 3, 4];
+
+    // 0 + 1 + 2 + 3 + 4
+    const initialValue = 0;
+    // accumulator is the cumulative result of operating on each array element
+    const sumWithInitial = array1.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      initialValue
+    );
+
+    console.log(sumWithInitial);

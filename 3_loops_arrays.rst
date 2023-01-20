@@ -179,7 +179,7 @@ Loops can contain any valid javascript code. For example:
     let maxAge = 0;
     let minAge = 100;
     
-    for (let i in grades) {
+    for (let i in ages) {
         sum += ages[i];
         if (ages[i] > maxAge) {
          maxAge = ages[i];

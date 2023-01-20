@@ -16,6 +16,7 @@ Arrays & Loops
 * looping over array items
     - for loops
     - while loops
+* higher-order array functions
 
 **Defining arrays**
 

@@ -4,17 +4,17 @@ Functions
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/functions.html 
+* JavaScript from Beginner to Professional, Ch. 6
 * http://www.w3schools.com/js/js_functions.asp
 * https://www.tutorialspoint.com/javascript/javascript_functions.html
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
 **Summary**
 
 * function definition
-* parameters
+* function parameters
 * return values
 * calling functions
-* ES6 (arrow) functions
 * higher-order functions
 
 JavaScript supports functions, which are self-contained blocks of code that perform a specific task. Functions are useful for encapsulating code that will be re-used, and can make programs easier to read and maintain.
@@ -22,80 +22,49 @@ JavaScript supports functions, which are self-contained blocks of code that perf
 JavaScript functions can be defined with the following format:
 ::
 
+    // classic JavaScript
     function <NAME>(<PARAMETER>) {
       // code to execute goes here
     }
 
-- Code within the function executes when the function is ‘called’ or ‘invoked’.
+    // ES6 'fat arrow' syntax
+    const <NAME> = (<PARAMETER>) => {
+      // code to execute goes here
+    }
+
+- Code within the function executes when the function is **called** or **invoked**.
 - Functions can contain any valid JS code.
 - Functions can be called with optional parameters inside parens.
-- JavaScript **hoists** functions defined like this, so they can be referenced by code earlier in the script.
+- Classic JavaScript **hoists** functions, so they can be referenced by code earlier in the script.
+- **ES6 functions** must be defined before any code that references them
 - Parameters serve as local variables within the function.  
 - Parameters can be any valid JS variable or object, and should use the same naming conventions as other variables,
+- In **E6 functions**, `this` refers to the function and not to the global application
+
 
 Functions can perform work:
 ::
 
-    function writeMessage(message) {
+    const writeMessage = (message) => {
       console.log(message);
     }
 
-Functions can also **return** a value to the code that called the function. 
+Functions can also **return** a value to the code that called the function.
 ::
 
-    function multiply(param1, param2) {
-      var factor = 0.5;
+    const multiply = (param1, param2) => {
+      let factor = 0.5;
       return param1 * param2 * factor;
+      // this code never executes
     }
-    var x = multiply(3,3);  // x = 4.5
-    var y = multiply(6,4);  // y = 12
+    let x = multiply(3,3);  // x = 4.5
+    let y = multiply(6,4);  // y = 12
 
-Variables defined within a function have **local scope** within the function and aren't accessible elsewhere:
-::
-
-    function multiply(param1, param2) {
-      var factor = 0.5;
-      return param1 * param2 * factor;
-    }
     console.log(factor); // generates Uncaught ReferenceError: factor is not defined
 
+- Any code after the **return** statement is ignored
+- variables defined within a function have **local scope** within the function and aren't accessible elsewhere:
 - variables defined outside the function have **global scope** and are available within the function.
-
-**Alternate function definition**
-
-JavaScript treats functions as first-class objects that can be assigned to a variable and passed to other functions.
-
-A function expression can assign an **anonymous** function to a variable, where the function definition is parsed once.
-::
-
-    var multiply = function(x, y) {
-       return x * y;
-    };
-    var x = multiply(3,3);
- 
-A function expression can also assign a ‘named’ function to a variable. The function name can be referenced independent of the variable. 
-::
-
-    var multiply = function func_name(x, y) {
-       return x * y;
-    };
-
-- behaves same as anonymous, but 'func_name' can appear when function is written out as a string.
-
-More details at - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
-
-**ES6 functions**
-
-A recent JavaScript standard - ES2015 or ES6 - introduced slightly different function syntax:
-::
-
-    const multiply = (x, y) => {
-       return x * y;
-    };
-
-Here, the function is defined as a *constant* value, with x & y as parameters. The *fat arrow* indicates the parameters are passed into the code enclosed with curly braces.
-
-Arrow functions are invoked just like classic JS functions, but handle scope a bit differently - in ES functions, **this** refers to the function and not to the global application.
 
 **Higher-order functions**
 
@@ -104,40 +73,43 @@ Higher-order functions are JavaScript functions that take a function as a parame
 Array.sort() is a typical HOF that accepts a custom function to sort array contents. (remember default Array sort doesn't work for numeric data).
 ::
 
-    var grades = [1, 12, 10, 9, 8];
-    document.write("<li>grades sorted alpha:" + grades.sort()); // outputs: 1,10,12,8,9
-    
-    // Array.sort() passes pairs of values to sortValuesAscending 
-    
-    var sorted_grades = grades.sort(sortValuesAscending); 
-    document.write("<li>grades sorted numerically:" + sorted_grades); // Output: 1,8,9,4,10,12
-    
-    // Sorts array elements in ascending order numerically 
-    function sortValuesAscending(first, second)
+    // Sort array elements in ascending order numerically
+    const sortValuesAscending = (first, second) =>
     {
         if (first == second)
             return 0;
         if (first < second)
             return -1;
         else
-            return 1; 
+            return 1;
     }
+
+    let grades = [1, 12, 10, 9, 8];
+    document.write("<li>grades sorted alpha:" + grades.sort()); // outputs: 1,10,12,8,9
+    
+    // Array.sort() passes pairs of values to sortValuesAscending 
+    
+    let sorted_grades = grades.sort(sortValuesAscending);
+    document.write("<li>grades sorted numerically:" + sorted_grades); // Output: 1,8,9,4,10,12
+    
 
 **Templating**
 
 Functions can be useful for separating data from HTML formatting:
 ::
 
-    var students = [ 
+    let students = [
     {name:"jim",id:32}, 
     {name:"mary",id:12},
     {name:"steve",id:5},
     {name:"sue",id:27} 
     ];
+
+    const linkForStudent = (student) => {
+       return "<li><a href='http://myschool.org/profile?id=" +student.id+ "'>" + student.name+"</a>";
+    }
+
     for (s in students) {
        // s is the ‘index’ number of current item in the student array
        document.write( linkForStudent(students[s]) );
     } 
-    function linkForStudent(student) {
-       return "<li><a href='http://myschool.org/profile?id=" +student.id+ "'>" + student.name+"</a>";
-    }

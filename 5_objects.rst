@@ -1,32 +1,32 @@
 ====
-Objects
+JavaScript Objects
 ====
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/objects.html 
+* JavaScript from Beginner to Professional, Ch. 7, 8
 * https://www.w3schools.com/js/js_objects.asp
-* http://www.w3schools.com/js/js_objects.asp
+* https://www.w3schools.com/js/js_object_definition.asp
+* https://www.w3schools.com/js/js_this.asp
 * https://www.tutorialspoint.com/javascript/javascript_objects.htm
 
 **Summary**
 
-* JavaScript object
+* JavaScript objects
 * object properties
 * object methods
 * object constructors
-* HTML DOM 
 
 **Notes**
 
 Software programs use ‘objects’ to simulate real-world objects and to encapsulate logic, so that programs can use these objects without knowing their internal details.
 
-JavaScript objects are collections of data items, where each item is a key-value pair, and can be defined like so:
+JavaScript objects are collections of data items, where each item is a `key-value` pair, and can be defined like so:
 ::
 
-    var student = { name: "Jim Jones", year: 1, major: "web" }  
+    const student = { name: "Jim Jones", year: 1, major: "web" }
 
-- keys must be strings
+- `keys` must be strings
 - values can be any JavaScript data type - string, number, array, boolean, or another object
 - keys and values are separated by a colon
 - key-value pairs are separated by a comma. There is no comma after the last pair
@@ -43,7 +43,7 @@ Object items have no sequence (or index number). Instead, values are accessed by
 You can still loop through an object’s properties:
 ::
 
-    for (var prop in student) {
+    for (let prop in student) {
       console.log(prop); // outputs the key name e.g. “name”
       console.log(student[prop]); // outputs the value for a given key e.g. “Jim Jones”
     }
@@ -65,7 +65,7 @@ Global browser objects:
 Arrays can contain a collection of custom objects:
 ::
 
-    var students = [
+    const students = [
     { name: "Jim Jones", year: 1, major: "web" },
     { name: "Dave Smith", year: 1, major: "itc" },
     { name: "Ann Hathaway", year: 2, major: "itc" },
@@ -75,14 +75,14 @@ Arrays can contain a collection of custom objects:
 
 **Object Methods**
 
-JavaScript objects can contain ‘methods’, which are functions contained within an object.
+JavaScript objects can contain `methods`, which are functions contained within an object.
 ::
 
-    var student = {
+    const student = {
       firstName: "Mary",
       lastName: "Jones",
-      fullName: function() {
-           return this.firstName + " " + this.lastName;
+      fullName: () => {
+           return `${this.firstName} ${this.lastName}`;
         }
     };
  

@@ -9,7 +9,7 @@ Functions
 * https://www.tutorialspoint.com/javascript/javascript_functions.html
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
-**Summary**
+**Learning Outcomes**
 
 * function definition
 * function parameters

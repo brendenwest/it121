@@ -8,7 +8,7 @@ Intro to JavaScript
 * http://www.w3schools.com/js/js_syntax.asp (read up thru data types)
 * https://www.w3schools.com/js/js_es6.asp
 
-**Summary**
+**Learning Outcomes**
 
 * JavaScript Intro
 * variables

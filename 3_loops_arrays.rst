@@ -8,7 +8,7 @@ Arrays & Loops
 * http://www.w3schools.com/js/js_arrays.asp  
 * http://www.w3schools.com/js/js_array_methods.asp 
 
-**Summary**
+**Learning Outcomes**
 
 * creating and populating arrays
 * accessing array items

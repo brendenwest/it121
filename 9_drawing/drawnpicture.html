@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+</head>
+    
+<body>
+
+<canvas id="myCanvas" width="800" height="400"
+style="border:1px solid #000000;">        
+</canvas>
+    
+<canvas id="myCanvas2" width="500" height="400"
+style="border:1px solid #000000;">        
+</canvas>
+    
+    
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "lightblue";
+ctx.fillRect(5,5,150,75);
+ctx.strokeStyle = "green";
+ctx.strokeRect(5,5,150,75);
+ctx.strokeStyle = "green";
+ctx.strokeRect(5,5,50,25);
+    
+var ctx2 = canvas.getContext("2d");
+ctx2.fillStyle = "lightblue";
+ctx2.fillRect(100,100,150,75);
+ctx2.strokeStyle = "green";
+ctx2.strokeRect(100,100,150,75);
+ctx2.strokeStyle = "green";
+ctx2.strokeRect(100,100,50,25);
+    
+var ctx3 = canvas.getContext("2d");
+ctx3.fillStyle = "lightblue";
+ctx3.fillRect(200,200,150,75);  
+ctx3.strokeStyle = "green";
+ctx3.strokeRect(200,200,150,75);
+ctx3.strokeStyle = "green";
+ctx3.strokeRect(200,200,50,25);
+
+//tilted rectangles
+var ctx5 = canvas.getContext("2d");
+ctx5.fillStyle = "lightblue";
+ctx3.rotate(10 * Math.PI / 500);
+ctx5.fillRect(645,5,150,75);  
+ctx5.strokeStyle = "green";
+ctx5.strokeRect(645,5,150,75);
+ctx5.strokeStyle = "green";
+ctx5.strokeRect(645,5,50,25);
+    
+var ctx6 = canvas.getContext("2d");
+ctx6.fillStyle = "lightblue";
+ctx3.rotate(10 * Math.PI / 500);
+ctx6.fillRect(545,105,150,75);  
+ctx6.strokeStyle = "green";
+ctx6.strokeRect(545,105,150,75);
+ctx6.strokeStyle = "green";
+ctx6.strokeRect(545,105,50,25);
+    
+var ctx7 = canvas.getContext("2d");
+ctx7.fillStyle = "lightblue";
+ctx7.rotate(10 * Math.PI / 500);
+ctx7.fillRect(445,205,150,75);  
+ctx7.strokeStyle = "green";
+ctx7.strokeRect(445,205,150,75);
+ctx7.strokeStyle = "green";
+ctx7.strokeRect(445,205,50,25);
+
+
+var mainCanvas = document.getElementById("myCanvas2");
+var mainContext = mainCanvas.getContext('2d');  
+    
+var canvasWidth = mainCanvas.width;
+var canvasHeight = mainCanvas.height;
+    
+var angle = 0;
+    
+var requestAnimationFrame = window.requestAnimationFrame || 
+                            window.mozRequestAnimationFrame || 
+                            window.webkitRequestAnimationFrame || 
+                            window.msRequestAnimationFrame;
+function drawCircle() {
+    mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
+    
+mainContext.fillStyle = "black"; //background color
+mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
+    
+mainContext.beginPath(); //draw the circle
+    
+var radius = 25 + 150 * Math.abs(Math.cos(angle));
+    mainContext.arc(225, 225, radius, 0, Math.PI * 2, false);
+    mainContext.closePath();
+
+mainContext.fillStyle = "blue"; //fill the circle
+mainContext.fill();
+
+angle += Math.PI / 375; //change the speed here
+    
+ requestAnimationFrame(drawCircle);
+}
+drawCircle();
+
+</script>
+    
+<script>
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#box").animate({height: "600px",width: "600px"});
+    });
+    $("#btn2").click(function(){
+        $("#box").animate({height: "100px"});
+    });
+});
+</script>
+    
+    
+<button id="btn1">Growing Rectangle</button>
+<button id="btn2">Reset Rectangle</button>
+
+
+<div id="box" style="background:blue;height:100px;width:100px;margin:25px;"></div>    
+
+</body>
+</html

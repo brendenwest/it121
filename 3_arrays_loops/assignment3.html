@@ -1,0 +1,43 @@
+<html>
+<script>
+/*assignment3*/
+
+var grades = "jim|25, sue|32, mary|34, ann|22, ted|28, frank|15, lisa|19, mike|30, ahn|26, vishaya|27";
+
+var students = grades.split(", ");
+    students.sort();
+	
+	var total = 0;
+    var min = 100;
+    var max = 0;
+ 
+ 	function students(str){
+	return str.toLowerCase().split(' ').map(function(word) {
+	    return word.replace(word[0], word[0].toUpperCase());
+	  }).join(' ');
+	} /*I tried to write a funtion to cap the names but it didn't work. sad */
+	
+    for (var index in students) {
+        var currentStudents = students[index].split("|");
+		  document.write("<li>" + currentStudents[0] + " ~ " + 
+                currentStudents[1]) /*+ str.charAt(0).toUpperCase; I tried to enter a charAt here, didn't work. sad*/
+        
+            var score = parseInt(currentStudents[1]);
+            total += score;
+        
+        if (score > max){
+            max = score;
+        }
+        if (score < min){
+            min = score;
+        }
+    }
+    
+    document.write("<p>Average =  " + total/students.length);
+    document.write("<p>High Score = " + max);
+    document.write("<p>Low Score = " + min);
+	
+	
+
+</script>
+</html>

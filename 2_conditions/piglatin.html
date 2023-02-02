@@ -1,0 +1,39 @@
+<html>
+<script> 
+//this is the script file
+
+//function translatePigLatin(str) {
+//{ 
+var sentence = prompt("stuff")
+//document.write(sentence)
+var words = sentence.split(" ")
+//document.write(words)
+
+var vowels = ["a", "e", "i", "o", "u"];
+
+for (index in words) {
+   // document.write(words[index] + "<br>");
+    
+var firstLetter = words[index].slice(0,1)
+//document.write(firstLetter)
+
+var secondLetter = words[index].slice(1, 2)
+//document.write(secondLetter)
+
+if (vowels.indexOf(firstLetter.toLowerCase())>-1){
+    //first letter is a vowels
+document.write(words[index] + "way")
+}
+else if (vowels.indexOf(secondLetter)>-1){
+document.write(words[index].slice(1) + firstLetter + "ay")
+}//first letter is NOT a vowel
+    
+else vowels.indexOf(secondLetter)>-1; {
+document.write(words[index].slice(2) + firstLetter + secondLetter + "ay")
+}//first 2 letters are NOT vowels
+
+}
+
+    
+    </script>
+</html>

@@ -1,21 +1,21 @@
 ====
-jQuery & DOM
+HTML DOM & JQuery
 ====
 
 **Reading**
 
-* http://www.w3schools.com/js/js_htmldom.asp 
-* http://thomaswilburn.github.io/textbook/build/jQuery.html 
+* JavaScript from Beginner to Professional, Ch. 9, 10
+* http://www.w3schools.com/js/js_htmldom.asp
 * http://www.w3schools.com/jQuery/jQuery_get_started.asp
 * http://try.jQuery.com/
 
-**Summary**
+**learning Outcomes**
 
 * HTML DOM 
 * Intro to jQuery
 * DOM traversal & manipulation
 
-**HTML DOM**
+**What is the HTML DOM?**
 
 Web browsers see each web page as a tree of objects (the Document Object Model or DOM). The DOM is a hierarchical tree of objects corresponding to tags (elements) in the page (e.g. <html>, <body>, <span>, etc.). 
 
@@ -53,7 +53,7 @@ You can change DOM elements, or add new ones, programmatically, as in this examp
 
 **jQuery Intro**
 
-jQuery is a JavaScript framework that simplifies coding of interactive web pages
+jQuery is a JS framework that simplifies coding of interactive web pages
 
 It ‘abstracts’ browser differences and language complexities, so developers can focus on what they want to accomplish,
 

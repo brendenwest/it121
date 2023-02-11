@@ -24,10 +24,9 @@ JQuery Events & Effects
 
 Occur Whenever the user does anything on the page--moves the mouse, presses a key, navigates forward or backward--or whenever the page itself changes.
 
-* http://www.w3schools.com/jquery/jquery_events.asp
-* http://www.w3schools.com/jquery/jquery_ref_events.asp
-
-**Event listeners** - are functions the browser will execute when a specific event happens. You can ‘register’ for event notification with anonymous function syntax:
+**Event listeners**
+* functions the browser will execute when a specific event happens.
+* You can ‘register’ for event notification with anonymous function syntax:
 ::
 
     var buttons = $('button');
@@ -60,7 +59,6 @@ The browser can also pass an event object to event listeners, with information a
 ::
 
     buttons.on('click', function(e) {
-      var $this = $(this); 
       console.log(“target = “ + e.target);
       console.log(“x = “ + e.pageX);
       console.log(“y = “ + e.pageY);
@@ -85,7 +83,7 @@ Other commands:
 .fadeTo(speed,opacity,callback); // speed and opacity required
 
 
-**Slide** - an element up or down.
+**Slide** an element up or down.
 
 **Animate** a specified set of CSS parameters (e.g. size, position, opacity)
 ::

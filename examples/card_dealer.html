@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<h1>Robo Dealer</h1>
+
+  <button onclick="dealHand();">Deal Hand</button>
+
+<hr><div id="card_hand"></div>
+
+<script>
+
+  const dealHand = () => {
+
+    /* code to deal a card hand goes here */
+
+    // update 'card_hand' DIV with appropriate information
+    $("#card_hand").html("Button clicked");
+
+    return false; // prevent page reload
+  }
+
+</script>
+
+</body>
+</html>

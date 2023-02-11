@@ -40,7 +40,7 @@ Some examples of basic AJAX requests are:
     $.post(URL,data,callback); // POST data (e.g. form values) to a URL
 
 * URL can be relative (on the same server) or a full web url
-* callback is an optional JavaScript function to execute when AJAX request completes (or fails)
+* *callback* is an optional JavaScript function to execute when AJAX request completes (or fails)
 * jQuery provides the server response object and status to the callback function
 
 For example:
@@ -142,3 +142,18 @@ With AJAX, you can send / receive data as JavaScript objects (JSON), with some a
         // request failed
       }
     });
+
+**Some Public API's**
+
+* http://www.programmableweb.com/ Links to an external site.Links to an external site.
+* https://data.seattle.gov/Links to an external site.
+* https://data.kingcounty.gov/Links to an external site.
+* https://data.wa.gov/Links to an external site.
+* https://www.data.gov/developers/apisLinks to an external site.
+* http://api.data.gov/ Links to an external site.Links to an external site.
+* https://dog.ceo/dog-api/ Links to an external site.
+* https://www.usa.gov/developerLinks to an external site.
+* https://dev.twitter.com/rest/public Links to an external site.
+* https://developers.google.com/apis-explorer/#p/ Links to an external site.
+* https://canvas.instructure.com/doc/api/index.html Links to an external site.
+* https://data.occrp.org/help/api

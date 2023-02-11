@@ -4,7 +4,7 @@ JQuery Events & Effects
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/events.html 
+* JavaScript from Beginner to Professional, Ch. 11
 * http://www.w3schools.com/jquery/jquery_events.asp
 * http://www.w3schools.com/jquery/jquery_ref_events.asp
 * http://www.w3schools.com/jquery/jquery_ref_effects.asp 
@@ -29,23 +29,23 @@ Occur Whenever the user does anything on the page--moves the mouse, presses a ke
 * You can ‘register’ for event notification with anonymous function syntax:
 ::
 
-    var buttons = $('button');
-    buttons.on('click', function() {
-     console.log('You rang?');
+    const buttons = $('button');
+    buttons.on("click", () => {
+     console.log("You rang?");
     });
 
 or with a ‘named’ function:
 ::
 
-    var btnClick = function() {
+    const btnClick = () => {
       console.log("You've got events!");
     };
-    buttons.on('click', btnClick);
+    buttons.on("click", btnClick);
     
 **event target** is the object that fired an event. When the browser calls the event listener, it passes a special variable - **$(this)** - referring to the the event target.
 ::
 
-    buttons.on('click', function() {
+    buttons.on("click", () => {
      console.log($(this).text());
     });
 
@@ -58,10 +58,10 @@ or with a ‘named’ function:
 The browser can also pass an event object to event listeners, with information about the event. Your event handler can make this object available as a local variable:
 ::
 
-    buttons.on('click', function(e) {
-      console.log(“target = “ + e.target);
-      console.log(“x = “ + e.pageX);
-      console.log(“y = “ + e.pageY);
+    buttons.on("click", (e) => {
+      console.log("target = " + e.target);
+      console.log("x = " + e.pageX);
+      console.log("y = " + e.pageY);
     });
     
 

@@ -5,13 +5,14 @@ JQuery Events & Effects
 **Reading**
 
 * JavaScript from Beginner to Professional, Ch. 11
+* https://www.w3schools.com/js/js_events.asp*
 * http://www.w3schools.com/jquery/jquery_events.asp
 * http://www.w3schools.com/jquery/jquery_ref_events.asp
-* http://www.w3schools.com/jquery/jquery_ref_effects.asp 
+* http://www.w3schools.com/jquery/jquery_ref_effects.asp
 
 **Summary**
 
-* What are events?
+* What are JavaScript events?
 * Event listeners
 * Event targets
 * The event object
@@ -22,27 +23,62 @@ JQuery Events & Effects
 
 **Events** 
 
-Occur Whenever the user does anything on the page--moves the mouse, presses a key, navigates forward or backward--or whenever the page itself changes.
+HTML events are "things" that happen to HTML elements that occur whenever the user or browser does anything on the page. This can include user-directed actions like clicking on an element less-visible actions like when a page finishes loading.
 
-**Event listeners**
-* functions the browser will execute when a specific event happens.
-* You can ‘register’ for event notification with anonymous function syntax:
+See a list of common HTML events at https://www.w3schools.com/jsref/dom_obj_event.asp
+
+**Event Handlers**
+
+Browsers can execute JavaScript code (an **event handler**) when an event happens.
+
+The simplest form of event handler is an explicit command on an HTML element, like:
+::
+
+    <button onclick="alert(this.innerText)">Click me</button>
+
+where the **onclick** attribute specifies JS code to execute. Here, **this** refers to the element generating the event.
+
+Attaching complex JS code to an event handler can be messy so it's more common to specify a function that will  be invoked.
+::
+
+    <button onclick="showAlert(this)">Click me</button>
+
+    <script>
+      const showAlert = (element) => {
+        alert(element.innerText);
+      }
+    </script>
+
+Rather than define the event handler in HTML, you can **register** an event handler (attach it to an HTML element) with JS:
+::
+
+const myFunction = (e) => {
+  // 'e' is the event object. 'target' is the element where the event occurred
+  alert(e.target.innerText);
+}
+document.getElementById("myButton").addEventListener("click", showAlert);
+
+https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+
+JQuery provides a simplified syntax for registering an event handler:
 ::
 
     const buttons = $('button');
-    buttons.on("click", () => {
-     console.log("You rang?");
+    buttons.on("click", (e) => {
+        alert(e.target.innerText);
     });
 
 or with a ‘named’ function:
 ::
 
-    const btnClick = () => {
-      console.log("You've got events!");
+    const btnClick = (e) => {
+        alert(e.target.innerText);
     };
     buttons.on("click", btnClick);
     
-**event target** is the object that fired an event. When the browser calls the event listener, it passes a special variable - **$(this)** - referring to the the event target.
+**event target** is the object that fired an event.
+
+JQuery provides a special variable - **$(this)** - referring to the the event target.
 ::
 
     buttons.on("click", () => {

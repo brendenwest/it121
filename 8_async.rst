@@ -1,38 +1,78 @@
 ====
-AJAX & JSON
+Asynchronous Operations
 ====
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/ajax.html 
+* JavaScript from Beginner to Professional, Ch. 13
+* https://www.w3schools.com/jsref/api_fetch.asp
 * http://www.w3schools.com/jquery/jquery_ref_ajax.asp
 
 **Summary**
 
-* What is AJAX?
-* AJAX via JQuery
-* Customizing AJAX requests
-* Send/receive JSON data
-* Submitting form data
-* 3rd party data API’s
- 
+* What are Async & Concurrency?
+* JavaScript callbacks
+* JavaScript promises & async/await
+* Making HTTP requests
 
-**What is AJAX**
+**What are Asynchronous Operations?**
 
-AJAX stands for “Asynchronous JavaScript and XML”, a method by which the browser can load structured data (e.g. XML or JSON) without refreshing the page.
+Sometimes a program needs to perform a long-running operation that will block subsequent operations until it completes. Network requests, file operations, and database queries are examples of such long-running operations. Because blocking operations are undesirable, they might be executed **asynchronously** (aka concurrently or in the background), allowing other operations to execute in parallel.
 
- 
-**AJAX via JQuery**
+JavaScript is a single-threaded language and can't technically run operations in **background** or **parallel**. But uses an **Event Loop** and callbacks to perform **concurrent** operations with a similar practical effect.
 
-jQuery hides browser differences in AJAX implementation and simplifies the commands.
+**CallBacks**
 
-jQuery allows you to request a URL and perform actions when the request completes or fails.
+JavaScript concurrency leverages callbacks - functions that take another function as an argument, which is then called when the rest of the initial function has finished.
+::
 
-The resource can be on the same server as your application, or on a separate server if that server is configured to recognize your application and support a Cross-Origin Request.
+    const doSomething = (callback) => {
+        console.log('first operation');
+        callback();
+    }
+    const whenDone = () => {
+        console.log('second operation');
+    }
+    doSomething(whenDone);
 
-AJAX operations are asynchronous, meaning your application can continue with other operations before the AJAX request completes. 
 
-Some examples of basic AJAX requests are:
+**Promises**
+
+JavaScript Promises are a mechanism to execute potentially long-running operations without blocking other operations.
+::
+
+    let x = 20
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => { // simulate long-running operation
+        console.log("First operation");
+        if (x > 10) {
+            resolve(x); // on success
+        } else {
+            reject("Too low");  // on error
+        }
+      }, "1000");
+    });
+    promise.then(
+        (value) => {
+            console.log("Success:", value);
+        },
+        (error) => {
+            console.log("Error:", error);
+        }
+    );
+    console.log("Second operation");
+
+This example creates a new **Promise** object with a callback function. The callback accepts two functions as parameters - one to invoke if the promis **resolves** (succeeds) and the other if the promise is **rejected* (fails).
+
+While the promise is running, subsequent commands are able to run.
+
+**HTTP Requests**
+
+Internet requests are a common long-running operation that web applications need to perform.
+
+Web browsers first gained the ability to make network requests with AJAX (Asynchronous JavaScript and XML), a method for loading structured data without refreshing the page. Ironically, AJAX could not practically be used for XML data requests.
+
+JQuery provides simple syntax for making an asynchronous AJAX request and performing actions when the request completes or fails. For example:
 ::
 
     $.get(URL,callback); // request a URL using GET method
@@ -46,7 +86,7 @@ Some examples of basic AJAX requests are:
 For example:
 ::
 
-    $.get(URL,function(response,status) {
+    $.get(URL, (response,status) => {
       if (status == "success") {
         // handle a successful request
       } else {
@@ -73,10 +113,10 @@ For example:
 ::
 
     $.ajax({url: "<URL>", 
-      success: function(result){
+      success: (result) => {
         // handle successful request
       },
-      error: function(xhr, status, error){
+      error: (xhr, status, error) => {
         // code to perform if request failed
       },
     }); 
@@ -100,16 +140,16 @@ Form data is usually sent to servers with a ‘POST’ request type. For example
     <div id='message' />
     
     <script>
-    $(document).ready(function(){
-        $('form button').on('click', function(e) {
+    $(document).ready(() => {
+        $('form button').on('click', (e) => {
            //cancel the default form submission
            e.preventDefault();
            //gather up all form-field values
-           var formData = $('#myform').serialize();
+           let formData = $('#myform').serialize();
            console.log(formData);
         
            //send the request
-           $.post(<URL>,formData,function(result, status){
+           $.post(<URL>,formData, (result, status) => {
               //when the server replies...
               if (status == “success”) {
                 $('#message).text('POST succeeded');
@@ -135,25 +175,10 @@ With AJAX, you can send / receive data as JavaScript objects (JSON), with some a
 ::
 
     // receive JSON data from server
-    $.getJSON(URL,function(data,status) {
+    $.getJSON(URL, (data,status) => {
       if (status == "success") {
         // handle successful request
       } else {
         // request failed
       }
     });
-
-**Some Public API's**
-
-* http://www.programmableweb.com/ Links to an external site.Links to an external site.
-* https://data.seattle.gov/Links to an external site.
-* https://data.kingcounty.gov/Links to an external site.
-* https://data.wa.gov/Links to an external site.
-* https://www.data.gov/developers/apisLinks to an external site.
-* http://api.data.gov/ Links to an external site.Links to an external site.
-* https://dog.ceo/dog-api/ Links to an external site.
-* https://www.usa.gov/developerLinks to an external site.
-* https://dev.twitter.com/rest/public Links to an external site.
-* https://developers.google.com/apis-explorer/#p/ Links to an external site.
-* https://canvas.instructure.com/doc/api/index.html Links to an external site.
-* https://data.occrp.org/help/api

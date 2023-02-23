@@ -6,6 +6,7 @@ Asynchronous Operations
 
 * JavaScript from Beginner to Professional, Ch. 13
 * https://www.w3schools.com/jsref/api_fetch.asp
+* https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 * http://www.w3schools.com/jquery/jquery_ref_ajax.asp
 
 **Summary**
@@ -13,7 +14,7 @@ Asynchronous Operations
 * What are Async & Concurrency?
 * JavaScript callbacks
 * JavaScript promises & async/await
-* Making HTTP requests
+* Making HTTP requests with Fetch & JQuery
 
 **What are Asynchronous Operations?**
 
@@ -72,7 +73,47 @@ Internet requests are a common long-running operation that web applications need
 
 Web browsers first gained the ability to make network requests with AJAX (Asynchronous JavaScript and XML), a method for loading structured data without refreshing the page. Ironically, AJAX could not practically be used for XML data requests.
 
-JQuery provides simple syntax for making an asynchronous AJAX request and performing actions when the request completes or fails. For example:
+JQuery provides simple syntax for making an asynchronous AJAX request and performing actions when the request completes or fails. (see details below)
+
+More recently, web browsers have adopted `fetch` as a built-in Promise-based approach for making asynchronous HTTP requests. Fetch has several benefits over `XMLHttpRequest`. In particular, the `Promise` will resolve as long as the server returns HTTP headers (even if the status code indicates an error), so UI clients can better handler errors.
+
+A basic `fetch` request has this syntax:
+::
+
+    fetch('http://example.com/movies.json')
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+
+where `fetch` accepts a URL and makes a GET request. If the request resolves, the response is passed to a `then` handler for processing.
+
+The `Response` object, contains the entire HTTP response. To extract the JSON body content from the Response object, we can use the `json()`` method, which returns a second promise that resolves with the parsed JSON body.
+
+**Fetch POST**
+
+Performing a Fetch POST request requires some configuration values in a context object. Configuration can be any valid HTTP request parameters.
+::
+
+    cons payload = { name: "dave", age: 32 }
+    fetch(URL, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'    // if posting JSON object
+        },
+        body: JSON.stringify(payload)
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+Note:
+- Use  `'Content-Type': 'application/x-www-form-urlencoded'` if posting Form data
+- Fetch promises support a `catch` handler for any network errors that occurred.
+
+**JQuery AJAX**
+
+For example:
 ::
 
     $.get(URL,callback); // request a URL using GET method
@@ -93,7 +134,6 @@ For example:
         // request failed
       }
     });
- 
 
 **Customizing AJAX Requests**
 

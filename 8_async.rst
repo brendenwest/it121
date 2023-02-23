@@ -108,6 +108,7 @@ Performing a Fetch POST request requires some configuration values in a context 
       });
 
 Note:
+
 - Use  `'Content-Type': 'application/x-www-form-urlencoded'` if posting Form data
 - Fetch promises support a `catch` handler for any network errors that occurred.
 

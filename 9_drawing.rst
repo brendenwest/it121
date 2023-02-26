@@ -1,10 +1,11 @@
 ====
-Drawing
+Drawing with JavaScript
 ====
 
 **Reading**
 
-* http://thomaswilburn.github.io/textbook/build/canvas.html 
+* JavaScript from Beginner to Professional, Ch. 14
+* http://www.w3schools.com/html/html5_intro.asp*
 * http://www.w3schools.com/canvas/default.asp 
 * https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API 
 
@@ -18,26 +19,25 @@ Drawing
 
 What is HTML5?
 
-HTML5 is a standard introduced in 2014 that adds many new features  http://www.w3schools.com/html/html5_intro.asp Links to an external site.that allow HTML pages to behave more like compiled applications.
+HTML5 is a standard introduced in 2014 that adds many features that allow HTML pages to behave more like compiled applications.
 
 
 **The <canvas> element**
 
-The HTML5 <canvas> element lets you draw any geometric shapes within its borders, using methods similar to those found in Photoshop and other drawing programs. <canvas> methods are central to interactive web games and data visualization.
+The HTML5 `<canvas>` element lets you draw any geometric shape within its borders, using methods similar to those found in Photoshop and other drawing programs. `<canvas>` methods are central to interactive web games and data visualization.
+
+Canvas element must have an id and width/height attributes. To draw within this space, you need to get a reference for the `context` of the <canvas> element.
 ::
 
-    <canvas id="picasso" height=640 width=480></canvas>
+   <canvas id="picasso" height=640 width=480></canvas>
+   <script>
+        let canvas = document.getElementById('picasso');
+        let context = canvas.getContext('2d');
+        context.fillRect(20, 40, 100, 100);
+   </script>
 
-* Canvas element must have an id, and width/height attributes
+The ‘context’ object has built-in properties and methods for drawing with javascript commands. It also retains the current `state` of a drawing in the <canvas>.
 
-
-To draw within this space, you need to get a reference for the ‘context’ of the <canvas> element:
-::
-
-    var canvas = document.getElementById('picasso');
-    var context = canvas.getContext('2d');
-
-The ‘context’ object has built-in properties and methods for drawing with javascript commands. It also retains the current ‘state’ of a drawing in the <canvas>.
 
 Drawing Methods
 ------
@@ -86,6 +86,7 @@ You can also draw curves:
 
 Drawing commands draw one or more lines along a ‘path’. Paths are central to 2d drawing and can be composed of many lines to form a complex image (e.g. 5-pointed star).
 
+
 Styling commands
 -----
 Javascript has several basic commands that apply styles to a line:
@@ -101,22 +102,33 @@ Colors can be any valid CSS color including color names (e.g. "green"), hex valu
 
 Other Path commands
 
-beginPath() - Begins a new path or resets the current one
-
-closePath() - Draw path from current point to the starting point
-moveTo(x, y) - Moves the pen to the specified point without drawing
-
-clearRect(x, y,width,height) - clear any drawings within the specified rectangle
+- beginPath() - Begins a new path or resets the current one
+- closePath() - Draw path from current point to the starting point
+- moveTo(x, y) - Moves the pen to the specified point without drawing
+- clearRect(x, y,width,height) - clear any drawings within the specified rectangle
 
 
 Transformations
+_____
 
 JavaScript supports a limited, but powerful set of commands to transform the drawing context.
 
-
-
 Note - these commands affect the <canvas> context and how subsequent elements are drawn.
 
-scale() - scales (zooms) the context. Subsequent drawings use the new scale
+- scale() - scales (zooms) the context. Subsequent drawings use the new scale
+- rotate() - rotates the context. sort of like rotating the canvas, but existing drawings remain in place.
 
-rotate() - rotates the context. sort of like rotating the canvas, but existing drawings remain in place.
+Loading Images into Canvas
+_____
+
+JavaScript can load an image to the canvas from the web page or using a file loader:
+::
+
+   <img id="flower" src="flower.jpg" />
+   <canvas id="picasso" height=640 width=480></canvas>
+   <script>
+        let canvas = document.getElementById('picasso');
+        let context = canvas.getContext('2d');
+        let myImage = document.getElementById("flower");
+        ctx.drawImage(myImage, 10, 10);
+   </script>

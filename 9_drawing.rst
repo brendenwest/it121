@@ -5,9 +5,9 @@ Drawing with JavaScript
 **Reading**
 
 * JavaScript from Beginner to Professional, Ch. 14
-* http://www.w3schools.com/html/html5_intro.asp*
-* http://www.w3schools.com/canvas/default.asp 
-* https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API 
+* http://www.w3schools.com/html/html5_intro.asp
+* https://www.w3schools.com/graphics/canvas_reference.asp
+* https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
 **Summary**
 
@@ -17,7 +17,7 @@ Drawing with JavaScript
 * Styles
 * Animation
 
-What is HTML5?
+**What is HTML5?**
 
 HTML5 is a standard introduced in 2014 that adds many features that allow HTML pages to behave more like compiled applications.
 
@@ -68,7 +68,9 @@ Draw a circle
 ::
 
     context.beginPath();
-    context.arc(95,50,40,0,2*Math.PI);
+    // set start_x & start_y as centerpoint of the circle
+    // context.arc(start_x, start_y, radius, start_angle, end_angle);
+    context.arc(100,100,40,0,2*Math.PI);
     context.stroke();
 
 Draw text

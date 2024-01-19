@@ -1,14 +1,13 @@
-====
 Arrays & Loops
-====
+---
 
-**Reading**
+### Reading
 
 * JavaScript from Beginner to Professional, Ch. 3 & 5
 * http://www.w3schools.com/js/js_arrays.asp  
 * http://www.w3schools.com/js/js_array_methods.asp 
 
-**Learning Outcomes**
+### Learning Outcomes
 
 * creating and populating arrays
 * accessing array items
@@ -18,10 +17,9 @@ Arrays & Loops
     - while loops
 * higher-order array functions
 
-**Defining arrays**
+### Defining Arrays
 
 Arrays store a **list** of values and can be defined using any of the below approaches:
-::
 
     let names = []; // creates empty array
     const names = ["jim", "dave", "sara", "ann"];
@@ -34,12 +32,10 @@ Arrays store a **list** of values and can be defined using any of the below appr
     const names = "jim,dave,sara,ann".split(",")
  
 Arrays can contain items of different data types:
-::
 
     const myArray = ["jim", 32, true];
 
 Array items are accessed by ‘index’ where index values start at zero:
-::
 
     names[0];          // returns "jim"
     names[0] = "fred"; // replaces "jim" with "fred"
@@ -47,12 +43,10 @@ Array items are accessed by ‘index’ where index values start at zero:
 
  
 Arrays have a length property:
-::
 
     names.length // returns 4
 
 Adding Array items:
-::
 
     names.push("greg") // adds new item at end of array
     names.unshift("greg") // adds new item at start of array
@@ -61,19 +55,16 @@ Adding Array items:
 
 
 Removing Array items:
-::
 
     var name = names.pop() // removes & returns last item in array
     var name = names.shift() // removes & returns first item in array. Remaining items shift position to left.
 
 Add/Remove simultaneously:
-::
 
     names.splice(2,0,"mark","mary"); // adds new items at index 2. Removes zero items.
     names.splice(1,2); // removes two items, starting at index 1
 
 Sorting Array items
-::
 
     names.sort() // sorts array alphabetically
     names.reverse() // reverses array
@@ -81,7 +72,6 @@ Sorting Array items
  - sort will provide incorrect results for numeric array data. Need to use a compare function, which we’ll discuss a bit later.
 
 Searching Arrays:
-::
 
     names.indexOf("mark");   // returns index of first matched item
     names.lastIndexOf("mark");
@@ -90,7 +80,6 @@ Searching Arrays:
 - indexOf() & lastIndexOf() return -1 if the search term isn't in the array
 
 Combining/Extracting Arrays
-::
 
     let names = ["jim", "dave", "sara", "ann"];
     let names2 = ["mark","mary"];
@@ -102,19 +91,17 @@ Combining/Extracting Arrays
     let namesString = names.toString() // return array items as  comma-delimited string
     let namesString = names.join("|") // return array items as string delimited by | (or anything specified between quotes.
 
-**Nested Arrays**
-::
+Nested Arrays
 
     let students = [["jim",20], ["dave",16], ["sara",18], ["ann",15]];
     // students[0] returns ["jim",20]
     // students[0][0] returns "jim"
 
 
-**Loops**
+### Loops
 Loops allow you to iterate through a sequence of items and perform the same operations on each.
 
-for, in - loop through each item in an array object. Counter generated automatically.
-::
+`for, in` - loop through each item in an array object. Counter generated automatically.
 
     for (let n in names) {
         document.write(names[n] + "<br>");
@@ -124,7 +111,6 @@ for, in - loop through each item in an array object. Counter generated automatic
 - with each iteration, n is assigned the 'index' number of the current array item
 
 counted loops
-::
 
     for (INITIALIZATION; TEST; UPDATE) {
         // code to execute
@@ -134,8 +120,7 @@ counted loops
 - TEST defines the condition for running the loop (or when it should stop).
 - UPDATE is executed after each run of the code block.
 
-For example:
-::
+Example:
 
     let names = ["jim", "dave", "sara", "ann"];
     for (let i = 0; i < names.length; i++) {
@@ -147,7 +132,6 @@ For example:
 - loop runs until i equals the length of `names` array
 
 Variants:
-::
 
     // loop through array in reverse order
     for (let i = names.length-1; i >= 0; i--) {
@@ -159,23 +143,21 @@ Variants:
         document.write(names[i] + "<br>");
     }
 
-**while loops**
-::
+### while loops
 
-    while(<condition>) {
+    while (<condition>) {
         // code to be executed
     }
 
     let i = 0;
-    while(names[i]) {
+    while (names[i]) {
         console.log(names[i])
         i++;
     }
 
 - if we forget to increment the counter, loop will run forever
 
-Loops can contain any valid javascript code. For example:
-::
+Loops can contain any valid javascript statements. For example:
 
     let ages = [25, 35, 30, 40];
     let sum = 0;
@@ -197,8 +179,7 @@ Loops can contain any valid javascript code. For example:
     console.log("max age = " + maxAge);
     console.log("min age = " + minAge);
 
-Use ‘break’ to end loop before final condition is reached:
-::
+Use `break` to exit a loop before final condition is reached:
 
     for (let i in names) {
         if names[i] == "dave" {
@@ -207,12 +188,11 @@ Use ‘break’ to end loop before final condition is reached:
          }
     }
 
-**Higher-order Array Methods**
+### Higher-order Array Methods
 
 JavaScript arrays have a number of built-in methods that take a `function` as a parameter. Often this parameter is an `anonymous` inline function. These higher-order methods are similar to loops, but more concise and readable.
 
 **filter** - Create an array containing only items that meet the function condition
-::
 
     const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
@@ -224,7 +204,6 @@ JavaScript arrays have a number of built-in methods that take a `function` as a 
     // Expected output: Array ["exuberant", "destruction", "present"]
 
 **map** - create an array with one item for each item in the source array
-::
 
     const array1 = [1, 4, 9, 16];
 
@@ -234,7 +213,6 @@ JavaScript arrays have a number of built-in methods that take a `function` as a 
     // Expected output: Array [2, 8, 18, 32]
 
 **reduce** - executes a function on each element of the array, in order. Uses the return value from the calculation as input for the next element. The array `reduce()`` function results in a single value.
-::
 
     const array1 = [1, 2, 3, 4];
 

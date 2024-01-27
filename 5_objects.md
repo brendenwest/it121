@@ -1,8 +1,7 @@
-====
 JavaScript Objects
-====
+---
 
-**Reading**
+### Reading
 
 * JavaScript from Beginner to Professional, Ch. 7, 8
 * https://www.w3schools.com/js/js_objects.asp
@@ -11,7 +10,7 @@ JavaScript Objects
 * https://www.w3schools.com/js/js_this.asp
 * https://www.tutorialspoint.com/javascript/javascript_objects.htm
 
-**Learning Outcomes**
+### Learning Outcomes
 
 * JavaScript objects
 * object properties
@@ -19,19 +18,19 @@ JavaScript Objects
 * object constructors
 * JavaScript classes
 
-**Notes**
+### Objects
 
-Software programs use ‘objects’ to simulate real-world objects and to encapsulate logic, so that programs can use these objects without knowing their internal details.
+Software programs use `objects` to simulate real-world objects and to encapsulate logic, so that programs can use these objects without knowing their internal details.
 
-JavaScript differs from most object-oriented programming languages, which use `classes` to define objects and inheritance.
+JavaScript differs from most `object-oriented` programming languages, which use `classes` to define objects and inheritance.
 
-Instead, JS objects can be defined literally as a collection of `key-value` pairs like so:
+Instead JS objects can be defined literally as a collection of `key-value` pairs like so:
 ::
 
     const student = { name: "Jim Jones", year: 1, major: "web" }
 
 - `keys` must be strings
-- values can be any JavaScript data type - string, number, array, boolean, or another object
+- `values` can be any JavaScript data type - string, number, array, boolean, or another object
 - keys and values are separated by a colon
 - key-value pairs are separated by a comma. There is no comma after the last pair
 - keys are sometimes referred to as object 'properties'
@@ -42,12 +41,11 @@ Object items have no sequence (or index number). Instead, values are accessed by
     console.log(student.name);
     console.log(student["name"]);
 
-**Object Constructors**
+### Object Constructors
 
-Alternatively, JS objects can be defined with a `constructor` function:
-::
+JS objects can also be defined with a `constructor` function:
 
-    // note we still have to use 'classic' function syntax
+    // note we still have to use 'classic' syntax
     function Student(name, year, major) {
         this.name = name;
         this.year = year;
@@ -58,17 +56,16 @@ Alternatively, JS objects can be defined with a `constructor` function:
     const student2 = new Student("Alicia Rashad", 3, "database");
 
 
-**Object Iteration**
+### Object Iteration
 
-You can still loop through an object’s properties:
-::
+You can loop through an object’s properties:
 
     for (let prop in student) {
       console.log(prop); // outputs the key name e.g. “name”
       console.log(student[prop]); // outputs the value for a given key e.g. “Jim Jones”
     }
-    
-**(some) JavaScript Built-in Objects**
+
+### (some) JavaScript Built-in Objects
 
 - Array
 - console
@@ -80,10 +77,9 @@ Global browser objects:
 - window - http://www.w3schools.com/js/js_window.asp 
 - document - http://www.w3schools.com/js/js_htmldom.asp 
 
-**Object collections**
+### Object collections
 
 Arrays can contain a collection of custom objects:
-::
 
     const students = [
     { name: "Jim Jones", year: 1, major: "web" },
@@ -93,10 +89,9 @@ Arrays can contain a collection of custom objects:
     ]; 
     document.write(students[0].name); // outputs ‘Jim Jones’
 
-**Object Methods**
+### Object Methods
 
 JavaScript objects can contain `methods`, which are functions contained within an object.
-::
 
     const student = {
       firstName: "Mary",
@@ -107,32 +102,29 @@ JavaScript objects can contain `methods`, which are functions contained within a
     };
  
 Methods perform an action and are invoked or ‘called’ like this (NOTE the parens):
-::
 
     document.write( student.fullName() );
 
 In the above example, the fullName() method ‘returns’ a string value that combines firstName and lastName. It uses **this** to reference its containing.object.
 
-**Object Inheritance**
+### Object Inheritance
 
 Unlike classic object-oriented languages, JavaScript objects inherit properties and methods from a `prototype` property.
 
 Modifying an object's prototype allows adding to or changing of properties (or methods) for all instances of that object type. For example:
-::
 
     // add new property to all 'Student' object instances
     Student.prototype.full_time = True;
 
 NOTE - JS does not limit what objects can be modified. **Only modify your own prototypes. Never modify the prototypes of standard JavaScript objects.**
 
-**JavaScript Classes**
+### JavaScript Classes
 
 While JS does not have a traditional `class-based` structure, developers used to that paradigm struggled with understanding JS and eventually ES6 introduced `classes` which provide a facade over existing JS object syntax.
 
 Unlike classic functions, JS class declarations are not `hoisted`, and you must declare a class before using it.
 
 Classes are defined with the `class` keyword and can have a `constructor` method.
-::
 
     class Student {
       constructor(name, year, major) {
@@ -146,7 +138,6 @@ Classes are defined with the `class` keyword and can have a `constructor` method
     const student2 = new Student("Alicia Rashad", 3, "database");
 
 Classes can inherit from parent classes using syntax similar to traditional class-based languages.
-::
 
     class Person {
       constructor(name) {
@@ -161,4 +152,3 @@ Classes can inherit from parent classes using syntax similar to traditional clas
         this.major;
       }
     }
-

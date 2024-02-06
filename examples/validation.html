@@ -19,18 +19,20 @@
 
 <script>
 
-function validateForm(myForm) {
+  const validateForm(myForm) {
 
-  var firstname = myForm.firstname.value; // get text of firstname field
+    // add validatePassword function here
 
-  // use this syntax to update 'message' DIV with appropriate wording
-  $("#message").html("message"); 
+    let firstname = myForm.firstname.value; // get text of firstname field
 
-  /* Form validation code goes here
-  */
-  
-  return false; // prevent page reload
-}
+    // use this syntax to update 'message' DIV with appropriate wording
+    $("#message").html("message");
+
+    /* Form validation code goes here
+    */
+
+    return false; // prevent page reload
+  }
 
 </script>
 

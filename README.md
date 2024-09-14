@@ -3,9 +3,9 @@ IT 121 - JavaScript I
 
 ### Class Details
 
-* Location: Virtual
-* Time: TH 5:00 - 6:15 pm
-* Dates: 01/02/2024 - 03/20/2024
+* Location: online
+* Time: -NA-
+* Dates: 09/23/2024 - 12/11/2024
 * Instructor: Brenden West | brenden.west@seattlecolleges.edu
 * Credits: 5
 

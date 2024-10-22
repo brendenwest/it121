@@ -13,8 +13,7 @@ JavaScript Objects
 ### Learning Outcomes
 
 * JavaScript objects
-* object properties
-* object methods
+* object properties & methods
 * object constructors
 * JavaScript classes
 
@@ -24,7 +23,7 @@ Software programs use `objects` to simulate real-world objects and to encapsulat
 
 JavaScript differs from most `object-oriented` programming languages, which use `classes` to define objects and inheritance.
 
-Instead JS objects can be defined literally as a collection of `key-value` pairs like so:
+Instead, JS objects can be defined literally as a collection of `key-value` pairs like so:
 
     const student = { name: "Jim Jones", year: 1, major: "web" }
 
@@ -79,8 +78,17 @@ You can loop through an object’s properties:
 
     for (let prop in student) {
       console.log(prop); // outputs the key name e.g. “name”
-      console.log(student[prop]); // outputs the value for a given key e.g. “Jim Jones”
+      console.log(student[prop]); // outputs the value for a given key 
     }
+
+    for (const [key, value] of Object.entries(student)) {
+        console.log(`${key}: ${value}`);
+    }
+
+You can also retrieve `keys` or `values` as an array:
+
+    console.log(Object.keys(student));
+    console.log(Object.values(student));
 
 ### (some) JavaScript Built-in Objects
 

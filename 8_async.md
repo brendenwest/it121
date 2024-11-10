@@ -4,6 +4,7 @@ Asynchronous Operations
 ### Reading
 
 * JavaScript from Beginner to Professional, Ch. 13
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 * https://www.w3schools.com/jsref/api_fetch.asp
 * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 * http://www.w3schools.com/jquery/jquery_ref_ajax.asp
@@ -37,32 +38,68 @@ JavaScript concurrency leverages callbacks - functions that take another functio
 
 ### Promises
 
-JavaScript Promises are a mechanism to execute potentially long-running operations without blocking other operations.
+JavaScript Promises allow a program to execute potentially long-running operations without blocking other operations. Some common long-running operations are
+- File read/write
+- database queries
+- HTTP requests
 
-    let x = 20
+Basic promise syntax:
+
+    let num = 20
     let promise = new Promise((resolve, reject) => {
       setTimeout(() => { // simulate long-running operation
         console.log("First operation");
-        if (x > 10) {
-            resolve(x); // on success
+        if (num > 10) {
+            resolve("success"); // on success
         } else {
-            reject("Too low");  // on error
+            reject("num too low");  // on error
         }
       }, "1000");
     });
-    promise.then(
-        (value) => {
-            console.log("Success:", value);
-        },
-        (error) => {
-            console.log("Error:", error);
-        }
-    );
+    console.log("Start");
+    promise.then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     console.log("Second operation");
 
 This example creates a new `Promise` object with a callback function. The callback accepts two functions as parameters - one to invoke if the promise `resolves` (succeeds) and the other if the promise is `rejected` (fails).
 
 While the promise is running, JavaScript can execute subsequent commands.
+
+The promise will `eventually` resolve with a value that can be handled in `then` block or be rejected with an error that can be handled in a `catch` block.
+
+### Async-await
+
+Promise syntax can be verbose and JavaScript has recently adopted a shorter alternative.
+
+- `async defines a function that returns a promise
+- `await` pauses the function until the promise resolves
+
+`await` can only be used inside an `async function.
+
+Basic example:
+
+    const asyncFunction = async (num) => {
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => { // simulate long-running operation
+          if (num > 10) {
+              resolve("success"); // on success
+          } else {
+              reject(`${num} too low`);  // on error
+          }
+        }, "1000");
+      });
+
+      const result = await promise.catch(err => err);
+      console.log(result)
+    }
+
+    asyncFunction(20);
+    asyncFunction(10);
+
 
 ### HTTP Requests
 

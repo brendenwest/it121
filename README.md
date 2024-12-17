@@ -3,9 +3,9 @@ IT 121 - JavaScript I
 
 ### Class Details
 
-* Location: online
-* Time: -NA-
-* Dates: 09/23/2024 - 12/11/2024
+* Location: Virtual
+* Time: Thurs 5 - 6:30 pm
+* Dates: 01/06/2025 - 03/26/2025
 * Instructor: Brenden West | brenden.west@seattlecolleges.edu
 * Credits: 5
 
@@ -54,3 +54,7 @@ The class will cover the following topics, although the order and precise list i
 Grades will be based on weekly assignments posted on Canvas each Monday and  designed to exercise the skills and concepts covered that week. Assignments are due by the end of the week, and late assignments will be automatically marked down by 10%.
 
 You may discuss how to approach a problem with other students in the class, but your submission must be your own work. Code submissions that are substantially identical would be considered cheating and subject to a markdown penalty.
+
+Homework assignments should be submitted in Canvas as links to your github.com repository. You should use a single repository and branch throughout the course, with clear a 'commit' message for each assignment completion.
+
+Submissions via multiple github.com repositories or branches may incur a grade penalty.

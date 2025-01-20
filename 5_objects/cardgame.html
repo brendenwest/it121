@@ -1,0 +1,34 @@
+<html>
+   <body>
+
+   <title>Deal Cards</title>
+
+
+
+    <script>
+          var values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+          var suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+
+      function dealCard() {
+            var value =  Math.floor(Math.random() * 13);
+            var suit =  Math.floor(Math.random() * 4);
+        for (i = 0; i < 5; i++) {
+          document.getElementById("deal").innerHTML =  values[value] + " of  " +  suits[suit];
+
+           //still working on making this display 5 times
+         }
+       }
+
+
+              </script>
+
+
+     <body>
+    <h1>Are you ready to play?</h1>
+       <div class="wrapper">
+         <p id ="deal"></p>
+
+       <button onClick= "dealCard()">Click to play</button>
+        </div>
+   </body>
+</html>

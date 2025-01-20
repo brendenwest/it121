@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Functions & validation</h1>
+
+<form id="form1" name="validform" class="validate" action="#" onsubmit="return validateForm(this);">
+    <span id="formerror" class="error"></span>
+  first name: <input type="text" name="firstname" id="firstname"><br>
+  last name: <input type="text" name="lastname" id="lastname"><br>
+  password: <input type="text" maxlength="10" name="password" id="password"><br>
+
+  <button >Check</button>
+</form>
+
+<hr><div id="message"></div>
+
+<script>
+function validateForm(myForm) {
+  var firstname = myForm.firstname.value; // get text of firstname field
+  // use this syntax to update 'message' DIV with appropriate wording
+  $("#message").html("Thank you for your entry!"); 
+  /* Form validation code goes here
+  */
+
+document.validform.firstname.onchange=function() {
+    var firstentry = document.validform.firstname.value;
+    
+    if (firstentry.indexof('')){
+        document.getElementById('formerror').innerHTML = "Please enter a first name."
+    } //first name field  
+}
+    
+ if (document.getElementById('password').value>8) {
+         alert("Password must be 8 characters or less")
+         return false
+     }else{
+         return true
+        } //to validate password
+     }
+     
+  
+
+  return false; // prevent page reload
+}
+</script>
+
+</body>
+</html> 
+
+   
+

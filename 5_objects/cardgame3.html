@@ -1,0 +1,58 @@
+<html>
+   <body>
+
+   <title>Deal Cards</title>
+
+
+
+    <script>
+          var values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+          var suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+        
+      function randomValue() {
+         return Math.floor(Math.random() * 13);
+      }
+            
+      function randomSuit() {
+        return Math.floor(Math.random() * 4);
+      }
+          
+      function dealCard() {
+            var value;
+            var suit;
+              
+            var list = document.getElementById("dealCard");
+           // var bullet = document.createElement("li");
+          
+           var valueList = ' ';         
+                
+                     
+      for (i = 0; i < 5; i++) {
+           value = randomValue();
+           suit = randomSuit();
+            valueList += values[value] + " of " + suits[suit] + "<br>";
+            list.innerHTML = valueList;
+            
+            console.log("i is at "+i);
+            
+          
+         }
+   
+      }
+       
+          
+
+
+              </script>
+
+
+     <body>
+    <h1>Are you ready to play?</h1>
+       <div class="wrapper">
+         <p id ="dealCard"></p>
+
+       <button onClick= "dealCard()">Click to play</button>
+       
+        </div>
+   </body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="content">Steps to take if you become a victim
+If you are a victim of identity theft, the Federal Trade Commission recommends these steps:
+File a complaint with the FTC at identitytheft.gov.
+Contact one of the three major credit bureaus to place a ‘fraud alert’ on your credit records:
+Equifax, www.Equifax.com, 1-800-766-0008
+Experian, www.Experian.com, 1 888-397-3742
+TransUnion, www.TransUnion.org, 1 (800) 680-7289
+Contact your financial institutions, and close any financial or credit accounts opened without your permission or tampered with by identity thieves.
+If your SSN is compromised and you know or suspect you are a victim of tax-related identity theft, the IRS recommends these additional steps:
+Respond immediately to any IRS notice; call the number provided.
+Complete IRS Form 14039, Identity Theft Affidavit, if your efiled return rejects because of a duplicate filing under your SSN or you are instructed to do so. Use a fillable form at IRS.gov, print, then attach the form to your return and mail according to instructions.
+If you previously contacted the IRS and did not have a resolution, contact us for specialized assistance at 1-800-908-4490. We have teams available to assist.
+About data breaches and your taxes
+Not all data breaches or computer hacks result in tax-related identity theft. It’s important to know what type of personal information was stolen.
+If you’ve been a victim of a data breach, keep in touch with the company to learn what it is doing to protect you and follow the “Steps for victims of identity theft.” Data breach victims should submit a Form 14039, Identity Theft Affidavit, only if your Social Security number has been compromised and your efile return was rejected as a duplicate or IRS has informed you that you may be a victim of tax-related identity theft.
+How to reduce your risk
+Join efforts by the IRS, states and tax industry to protect your data. Taxes. Security. Together. We all have a role to play. Here's how you can help:
+Always use security software with firewall and anti-virus protections. Use strong passwords.
+Learn to recognize and avoid phishing emails, threatening calls and texts from thieves posing as legitimate organizations such as your bank, credit card companies and even the IRS.
+Do not click on links or download attachments from unknown or suspicious emails.
+Protect your personal data. Don’t routinely carry your Social Security card, and make sure your tax records are secure.
+See Publication 4524, Security Awareness for Taxpayers, to learn more
+
+For phishing scams by phone, fax or mail, call 1-800-366-4484. 
+</div>
+        <div id="answers"></div>
+        <script>
+        $(document).ready(function(){
+        
+       // Use regular expressions, JavaScript & jQuery to:
+        //- Count & display # of words
+            var copy = $("#content").text();
+            console.log(copy.match(/\s/g));
+            length: 419
+            
+       // - Count & display # of occurrences of 'tax' or 'taxes' (exact match)
+            var copy = $("#content").text();
+            var count1 = (copy.match(/tax/g) || []).length;
+            6 
+            var copy = $("#content").text();
+            var count1 = (copy.match(/taxes/g) || []).length;
+            1 
+            
+       // - Display all phone #'s
+            var copy = $("#content").text();
+            var phone1 = copy.match(/\d-\d\d\d\-\d\d\d-\d\d\d\d/igm); 
+            console.log(phone1)
+            Array[3]
+            0:"1-800-766-0008"
+            1:"1-800-908-4490"
+            2:"1-800-366-4484"
+            length:3 
+            
+            var copy = $("#content").text();
+            var phone2 = copy.match(/\d\s\d\d\d\-\d\d\d-\d\d\d\d/igm); 
+            console.log(phone2)
+            Array[1]
+            0:"1 888-397-3742"
+            length:1 
+            
+            var copy = $("#content").text();
+            var phone3 = copy.match(/\d\s\(800.\s\d\d\d-\d\d\d\d/igm);
+            console.log(phone3)
+            Array[1]
+            0:"1 (800) 680-7289"
+            length:1 
+            
+       // - Display all IRS forms & publications
+            var copy = $("#content").text();
+            var form = copy.match(/(Form)+\s\d\d\d\d\d/igm);
+            console.log(form)
+            Array[2] 
+            0:"Form 14039"
+            1:"Form 14039"
+            length :2 
+            
+            var copy = $("#content").text();
+            var form = copy.match(/(Publication)+\s\d\d\d\d/igm); 
+            console.log(form)
+            Array[1]
+            0:"Publication 4524"
+            length:1 
+            
+       // - Update all web addresses to clickable urls by adding 'http://'
+            var copy = $("#content").text();
+            var url1 = copy.replace(/www.Experian.com/i, 'http://www.Experian.com');
+            console.log(url1) 
+            
+            var copy = $("#content").text();
+            var url2 = copy.replace(/www.Equifax.com/i, 'http://www.Equifax.com');
+            console.log(url2)
+           
+            var copy = $("#content").text();
+            var url3 = copy.replace(/www.TransUnion.org/i, 'http://www.TransUnion.org');
+            console.log(url3)
+            
+        });
+            
+        </script>
+        
+    </body>
+</html>

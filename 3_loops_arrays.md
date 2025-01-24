@@ -182,7 +182,7 @@ Loops can contain any valid javascript statements. For example:
 Use `break` to exit a loop before final condition is reached:
 
     for (let i in names) {
-        if names[i] == "dave" {
+        if (names[i] == "dave") {
             document.write("Found Dave!<br>");
             break;
          }

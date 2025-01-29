@@ -5,7 +5,7 @@ Functions
 
 * JavaScript from Beginner to Professional, Ch. 6
 * http://www.w3schools.com/js/js_functions.asp
-* https://www.tutorialspoint.com/javascript/javascript_functions.html
+* https://www.tutorialspoint.com/javascript/javascript_functions.htm
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
 ### Learning Outcomes

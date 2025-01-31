@@ -22,14 +22,15 @@ JavaScript functions can be defined with the following format:
 
     // classic JavaScript
     function <NAME>(<PARAMETER>) {
-      // code to execute goes here
+      // code to execute goes here 
     }
 
     // ES6 'fat arrow' syntax
-    const <NAME> = (<PARAMETER>) => {
+    const <NAME> = (<PARAMETER>='DEFAULT') => {
       // code to execute goes here
     }
 
+- If no parameter is provided, use the default value
 - Code within the function executes when the function is `called` or `invoked`.
 - Functions can contain any valid JS code.
 - Functions can be called with optional parameters inside parens.

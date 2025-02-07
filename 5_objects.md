@@ -46,7 +46,7 @@ JavaScript objects can contain `methods`, which are functions scoped within an o
     const student = {
       firstName: "Mary",
       lastName: "Jones",
-      fullName: () => {
+      fullName() { // need to use 'classic' function syntax here
            return `${this.firstName} ${this.lastName}`;
         }
     };

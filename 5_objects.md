@@ -126,7 +126,7 @@ Classes are defined with the `class` keyword and can have a `constructor` method
       constructor(name, year, major) {
         this.name = name;
         this.year = year;
-        this.major;
+        this.major = major;
       }
     }
 
@@ -145,6 +145,14 @@ Classes can inherit from parent classes using syntax similar to traditional clas
       constructor(name, year, major) {
         super(name);   // super() method refers to the parent class
         this.year = year;
-        this.major;
+        this.major = major;
+      }
+    }
+
+    class Faculty extends Person {
+      constructor(name, department, isFullTime) {
+        super(name);   // super() method refers to the parent class
+        this.department = department;
+        this.isFullTime = isFullTime;
       }
     }
